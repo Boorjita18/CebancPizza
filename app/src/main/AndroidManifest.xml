@@ -15,8 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ElegirPizza"></activity>
-        <activity android:name=".datosUsuario"></activity>
+        <activity android:name=".ElegirPizza" />
+        <activity android:name=".datosUsuario" />
+        <activity android:name=".ElegirBebida" />
+        <activity android:name=".ElegirPostre"></activity>
     </application>
 
 </manifest>
