@@ -18,6 +18,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
+        android:padding="10dp"
         android:text="@string/btn_pedido"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -35,6 +36,7 @@
         android:text="@string/titulo_pedidos"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textSize="36sp"
+        android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -70,6 +72,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:padding="10dp"
                     android:text="@string/nombre_pizza"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
@@ -85,6 +88,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
+                    android:padding="10dp"
                     android:contentDescription=""
                     app:srcCompat="@mipmap/barbacoa"
                     tools:ignore="ContentDescription" />
@@ -94,6 +98,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
                     android:text="@string/descripcion_de_la_pizza" />
 
                 <TextView
@@ -101,6 +107,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
+                    android:padding="10dp"
                     android:text="@string/precio"
                     android:textAlignment="textEnd" />
 
