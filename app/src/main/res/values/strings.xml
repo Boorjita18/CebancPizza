@@ -12,4 +12,5 @@
     <string name="nombre_pizza">Nombre Pizza</string>
     <string name="btn_pedido">Pedido</string>
     <string name="titulo_pedidos">Pizzas</string>
+    <string name="precio">0,00 €</string>
 </resources>
