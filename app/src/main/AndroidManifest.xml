@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ElegirPizza"></activity>
+        <activity android:name=".datosUsuario"></activity>
     </application>
 
 </manifest>
