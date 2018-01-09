@@ -23,7 +23,7 @@
 
     <style name="Botones">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/brown</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
