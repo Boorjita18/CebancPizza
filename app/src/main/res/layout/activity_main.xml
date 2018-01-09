@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cebancpizza.cebancpizza.MainActivity">
+    android:theme="@style/AppTheme"
+    tools:context="com.cebancpizza.cebancpizza.MainActivity"
+    tools:theme="@style/AppTheme">
 
     <Button
         android:id="@+id/button"
@@ -14,7 +16,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="Empezar Pedido"
+        android:text="@string/btn_empezar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -29,7 +31,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="cebanc@cebanc.com"
+        android:text="@string/email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -45,7 +47,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="943 31 69 00"
+        android:text="@string/telefono"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -61,7 +63,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="Berio Pasealekua, 50, 20018 Donostia, Gipuzkoa"
+        android:text="@string/direccion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintLeft_toLeftOf="parent"
