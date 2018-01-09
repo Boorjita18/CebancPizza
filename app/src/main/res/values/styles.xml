@@ -14,5 +14,19 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="Texto" parent="@android:style/Widget.Holo.Light.TextView">
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Botones">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/brown</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 
 </resources>

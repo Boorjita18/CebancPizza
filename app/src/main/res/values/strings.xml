@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">CebancPizza</string>
     <string name="hola">hello</string>
-    <string name="telefono">943 31 69 00</string>
-    <string name="direccion">Berio Pasealekua, 50, 20018 Donostia, Gipuzkoa</string>
-    <string name="btn_empezar">Empezar Pedido</string>
-    <string name="email">cebanc@cebanc.com</string>
+    <string name="_943_31_69_00">943 31 69 00</string>
+    <string name="berio_pasealekua_50_20018_donostia_gipuzkoa">Berio Pasealekua, 50, 20018 Donostia, Gipuzkoa</string>
+    <string name="empezar_pedido">Empezar Pedido</string>
+    <string name="cebanc_cebanc_com">cebanc@cebanc.com</string>
+    <string name="cebanc_pizza">Cebanc Pizza</string>
 </resources>
