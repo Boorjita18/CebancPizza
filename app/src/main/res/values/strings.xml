@@ -7,4 +7,9 @@
     <string name="cebanc_cebanc_com">cebanc@cebanc.com</string>
     <string name="cebanc_pizza">Cebanc Pizza</string>
     <string name="byn_empezar">Empezar</string>
+    <string name="descripcion_de_la_pizza">Descripción de la pizza</string>
+    <string name="imagen_pizza">Imagen pizza</string>
+    <string name="nombre_pizza">Nombre Pizza</string>
+    <string name="btn_pedido">Pedido</string>
+    <string name="titulo_pedidos">Pizzas</string>
 </resources>
