@@ -81,11 +81,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton"
+                    style="@style/Botones"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
-                    app:srcCompat="@mipmap/barbacoa"
                     android:contentDescription=""
+                    app:srcCompat="@mipmap/barbacoa"
                     tools:ignore="ContentDescription" />
 
                 <TextView
