@@ -2,13 +2,17 @@
     <string name="app_name">CebancPizza</string>
     <string name="telefono">943 31 69 00</string>
     <string name="direccion">Berio Pasealekua, 50, 20018 Donostia, Gipuzkoa</string>
-    <string name="btn_empezar">Empezar Pedido</string>
     <string name="email">cebanc@cebanc.com</string>
     <string name="cebanc_pizza">Cebanc Pizza</string>
 
+    <!-- Botones -->
+    <string name="btn_empezar">Empezar Pedido</string>
+    <string name="btn_pedido">Pedido</string>
+    <string name="volver">Volver</string>
+    <string name="siguiente">Siguiente</string>
+
     <!-- Activity elegir pizza -->
     <string name="titulo_pedidos">Pizzas</string>
-    <string name="btn_pedido">Pedido</string>
 
     <string name="nombre_pizza_1">Barbacoa</string>
     <string name="descripcion_de_la_pizza_1">Descripción de la pizza</string>
@@ -46,41 +50,64 @@
     <string name="descripcion_de_la_pizza_9">Descripción de la pizza</string>
     <string name="precio_pizza_9">0,00 €</string>
 
+
+    <!-- Activity opciones pizza -->
+    <string name="titulo_opcion_pizza">Tipo Pizza</string>
+    <string name="tipo_de_masa">Tipo de masa</string>
+    <string name="masa_normal">Masa normal</string>
+    <string name="masa_fina">Masa fina</string>
+    <string name="tamanno">Tamaño</string>
+    <string name="tipo_familiar">Familiar</string>
+    <string name="tipo_individual">Individual</string>
+    <string name="tipo_mediana">Mediana</string>
+    <string name="cantidad_opciones_pizza">Cantidad</string>
+
+    <!-- Activity elegir bebida -->
     <string name="bebidas">Bebidas</string>
-    <string name="cocacola">Coca Cola</string>
-    <string name="limon">Limon</string>
-    <string name="precio_cocacola">Precio: 2,30 € </string>
     <string name="cantidad">Cantidad:</string>
+
+    <string name="cocacola">Coca Cola</string>
+    <string name="precio_cocacola">Precio: 2,30 € </string>
+
+    <string name="limon">Limon</string>
     <string name="precio_limon">Precio: 2,10€ </string>
+
     <string name="red_bull">Red Bull</string>
-    <string name="nestea">Nestea</string>
     <string name="precio_redbull">Precio: 3,00 €</string>
+
+    <string name="nestea">Nestea</string>
     <string name="precio_nestea">Precio: 1,90 €</string>
+
     <string name="cerveza">Cerveza</string>
-    <string name="agua">Agua</string>
     <string name="precio_cerveza">Precio: 2,20€</string>
+
+    <string name="agua">Agua</string>
     <string name="precio_agua">Precio: 1,50 €</string>
 
+    <!-- Activity elegir postre -->
     <string name="postres">Postres</string>
-    <string name="chocolate">Chocolate</string>
-    <string name="hojaldre">Hojaldre</string>
+
     <string name="tartas">Tartas</string>
-    <string name="manzana">Manzana</string>
-    <string name="precio_tarta_chocolate">Precio: 3,10€</string>
-    <string name="precio_hojaldre">Precio: 3,30€</string>
-    <string name="precio_manzana">Precio: 3,50€</string>
     <string name="helados">Helados</string>
+    <string name="frutas">Frutas</string>
+
+    <string name="chocolate">Chocolate</string>
+    <string name="precio_tarta_chocolate">Precio: 3,10€</string>
+
+    <string name="hojaldre">Hojaldre</string>
+    <string name="precio_hojaldre">Precio: 3,30€</string>
+
+    <string name="manzana">Manzana</string>
+    <string name="precio_manzana">Precio: 3,50€</string>
+
     <string name="vainilla">Vainilla</string>
     <string name="yogurt">Yogurt</string>
     <string name="precio_helado">Precio: 2,00 €</string>
-    <string name="frutas">Frutas</string>
-    <string name="platano">Platano</string>
-    <string name="pina">Piña</string>
-    <string name="melon">Melón</string>
-    <string name="precio_platano">Precio: 1,20€</string>
-    <string name="precio_pina">Precio: 1,60€</string>
-    <string name="precio_melon">Precio: 1,60€</string>
 
-    <string name="volver">Volver</string>
-    <string name="siguiente">Siguiente</string>
+    <string name="platano">Platano</string>
+    <string name="precio_platano">Precio: 1,20€</string>
+    <string name="pina">Piña</string>
+    <string name="precio_pina">Precio: 1,60€</string>
+    <string name="melon">Melón</string>
+    <string name="precio_melon">Precio: 1,60€</string>
 </resources>
