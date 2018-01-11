@@ -45,6 +45,42 @@
     <string name="nombre_pizza_9">Pulled Beef</string>
     <string name="descripcion_de_la_pizza_9">Descripción de la pizza</string>
     <string name="precio_pizza_9">0,00 €</string>
-    <string name="btn_siguiente">Siguiente</string>
-    <string name="btn_atras">Atras</string>
+
+    <string name="bebidas">Bebidas</string>
+    <string name="cocacola">Coca Cola</string>
+    <string name="limon">Limon</string>
+    <string name="precio_cocacola">Precio: 2,30 € </string>
+    <string name="cantidad">Cantidad:</string>
+    <string name="precio_limon">Precio: 2,10€ </string>
+    <string name="red_bull">Red Bull</string>
+    <string name="nestea">Nestea</string>
+    <string name="precio_redbull">Precio: 3,00 €</string>
+    <string name="precio_nestea">Precio: 1,90 €</string>
+    <string name="cerveza">Cerveza</string>
+    <string name="agua">Agua</string>
+    <string name="precio_cerveza">Precio: 2,20€</string>
+    <string name="precio_agua">Precio: 1,50 €</string>
+
+    <string name="postres">Postres</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="hojaldre">Hojaldre</string>
+    <string name="tartas">Tartas</string>
+    <string name="manzana">Manzana</string>
+    <string name="precio_tarta_chocolate">Precio: 3,10€</string>
+    <string name="precio_hojaldre">Precio: 3,30€</string>
+    <string name="precio_manzana">Precio: 3,50€</string>
+    <string name="helados">Helados</string>
+    <string name="vainilla">Vainilla</string>
+    <string name="yogurt">Yogurt</string>
+    <string name="precio_helado">Precio: 2,00 €</string>
+    <string name="frutas">Frutas</string>
+    <string name="platano">Platano</string>
+    <string name="pina">Piña</string>
+    <string name="melon">Melón</string>
+    <string name="precio_platano">Precio: 1,20€</string>
+    <string name="precio_pina">Precio: 1,60€</string>
+    <string name="precio_melon">Precio: 1,60€</string>
+
+    <string name="volver">Volver</string>
+    <string name="siguiente">Siguiente</string>
 </resources>
