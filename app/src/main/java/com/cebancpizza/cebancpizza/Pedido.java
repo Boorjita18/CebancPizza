@@ -99,5 +99,14 @@ public class Pedido extends android.app.Application {
             }
         }
     }
+    public ArrayList<Pizza> getListaPizzas(){
+        return listaPizzas;
+    }
+    public ArrayList<Bebida> getListaBebidas(){
+        return listaBebidas;
+    }
+    public ArrayList<Postre> getListaPostres(){
+        return listaPostres;
+    }
 
 }

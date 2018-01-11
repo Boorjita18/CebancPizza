@@ -48,12 +48,10 @@
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="371dp"
-        android:layout_height="450dp"
+        android:layout_height="381dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,8 +74,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tartas"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold" />
 
 
             </TableRow>
@@ -232,6 +230,7 @@
                     android:inputType="number"
                     android:textSize="14sp" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -241,8 +240,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/helados"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold" />
 
 
             </TableRow>
@@ -396,6 +395,7 @@
                     android:inputType="number"
                     android:textSize="14sp" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -405,8 +405,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/frutas"
-                    android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold" />
 
 
             </TableRow>

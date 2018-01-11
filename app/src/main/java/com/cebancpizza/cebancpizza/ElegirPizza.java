@@ -22,4 +22,11 @@ public class ElegirPizza extends AppCompatActivity {
             intent.putExtra("Precio", "5,00");
             startActivity(intent);
     }
+    public void revisarPedido(View v){
+        Intent intent = new Intent(this, revisarPedido.class);
+        startActivity(intent);
+    }
+    public void volver(View v){
+        finish();
+    }
 }

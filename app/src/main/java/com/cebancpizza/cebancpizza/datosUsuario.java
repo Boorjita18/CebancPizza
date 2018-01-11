@@ -96,5 +96,8 @@ public class datosUsuario extends AppCompatActivity {
             startActivity(intent);
         }
     }
+    public void volver(View v){
+        finish();
+    }
 
 }
