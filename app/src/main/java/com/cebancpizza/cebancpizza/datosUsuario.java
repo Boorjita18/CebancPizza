@@ -36,7 +36,7 @@ public class datosUsuario extends AppCompatActivity {
         telefonoText   = (EditText)findViewById(R.id.telefonoUsuario);
         emailText   = (EditText)findViewById(R.id.emailUsuario);
 
-        if (nombreText.getText().toString() != "") {
+        if (!nombreText.getText().toString().equals("")) {
             nombre = nombreText.getText().toString();
         }
         else{
@@ -44,7 +44,7 @@ public class datosUsuario extends AppCompatActivity {
             erroresTexto+="El nombre es obligatorio\n";
         }
 
-        if (apellidosText.getText().toString() != "") {
+        if (!apellidosText.getText().toString().equals("")) {
             apellidos = apellidosText.getText().toString();
         }
         else{
@@ -52,22 +52,22 @@ public class datosUsuario extends AppCompatActivity {
             erroresTexto+="El apellido es obligatorio\n";
         }
 
-        if (direccionText.getText().toString() != "") {
+        if (!direccionText.getText().toString().equals("")) {
             direccion = direccionText.getText().toString();
         }
         else{
             errores = true;
-            erroresTexto+="la dirección es obligatoria\n";
+            erroresTexto+="La dirección es obligatoria\n";
         }
 
-        if (telefonoText.getText().toString() != "") {
+        if (!telefonoText.getText().toString().equals("")) {
             telefono = Integer.parseInt(telefonoText.getText().toString());
         }
         else{
             errores = true;
             erroresTexto+="El teléfono es obligatorio\n";
         }
-        if (emailText.getText().toString() != "") {
+        if (!emailText.getText().toString().equals("")) {
             email = emailText.getText().toString();
         }
         else{
