@@ -67,12 +67,12 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/textView_nombre_pizza_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="10dp"
-                    android:text="@string/nombre_pizza"
+                    android:text="@string/nombre_pizza_1"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
             </TableRow>
@@ -82,32 +82,432 @@
                 android:layout_height="match_parent">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
+                    android:id="@+id/imageButton_pizza_1"
                     style="@style/Botones"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
-                    android:padding="10dp"
                     android:contentDescription=""
+                    android:padding="10dp"
                     app:srcCompat="@mipmap/barbacoa"
                     tools:ignore="ContentDescription" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/textView_descripcion_pizza_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:padding="10dp"
                     android:paddingBottom="10dp"
-                    android:text="@string/descripcion_de_la_pizza" />
+                    android:text="@string/descripcion_de_la_pizza_1" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView_precio_pizza_1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:padding="10dp"
-                    android:text="@string/precio"
+                    android:text="@string/precio_pizza_1"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView_nombre_pizza_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nombre_pizza_2"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton_pizza_2"
+                    style="@style/Botones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:contentDescription=""
+                    android:padding="10dp"
+                    app:srcCompat="@mipmap/campina"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_descripcion_pizza_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/descripcion_de_la_pizza_2" />
+
+                <TextView
+                    android:id="@+id/textView_precio_pizza_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:padding="10dp"
+                    android:text="@string/precio_pizza_2"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView_nombre_pizza_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nombre_pizza_3"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton_pizza_3"
+                    style="@style/Botones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:contentDescription=""
+                    android:padding="10dp"
+                    app:srcCompat="@mipmap/gourmet"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_descripcion_pizza_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/descripcion_de_la_pizza_3" />
+
+                <TextView
+                    android:id="@+id/textView_precio_pizza_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:padding="10dp"
+                    android:text="@string/precio_pizza_3"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView_nombre_pizza_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nombre_pizza_4"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton_pizza_4"
+                    style="@style/Botones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:contentDescription=""
+                    android:padding="10dp"
+                    app:srcCompat="@mipmap/hawaiana"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_descripcion_pizza_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/descripcion_de_la_pizza_4" />
+
+                <TextView
+                    android:id="@+id/textView_precio_pizza_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:padding="10dp"
+                    android:text="@string/precio_pizza_4"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView_nombre_pizza_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nombre_pizza_5"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton_pizza_5"
+                    style="@style/Botones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:contentDescription=""
+                    android:padding="10dp"
+                    app:srcCompat="@mipmap/jamonqueso"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_descripcion_pizza_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/descripcion_de_la_pizza_5" />
+
+                <TextView
+                    android:id="@+id/textView_precio_pizza_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:padding="10dp"
+                    android:text="@string/precio_pizza_5"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView_nombre_pizza_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nombre_pizza_6"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton_pizza_6"
+                    style="@style/Botones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:contentDescription=""
+                    android:padding="10dp"
+                    app:srcCompat="@mipmap/margarita"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_descripcion_pizza_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/descripcion_de_la_pizza_6" />
+
+                <TextView
+                    android:id="@+id/textView_precio_pizza_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:padding="10dp"
+                    android:text="@string/precio_pizza_6"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView_nombre_pizza_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nombre_pizza_7"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton_pizza_7"
+                    style="@style/Botones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:contentDescription=""
+                    android:padding="10dp"
+                    app:srcCompat="@mipmap/messiesingluten"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_descripcion_pizza_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/descripcion_de_la_pizza_7" />
+
+                <TextView
+                    android:id="@+id/textView_precio_pizza_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:padding="10dp"
+                    android:text="@string/precio_pizza_7"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView_nombre_pizza_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nombre_pizza_8"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton_pizza_8"
+                    style="@style/Botones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:contentDescription=""
+                    android:padding="10dp"
+                    app:srcCompat="@mipmap/peperoni"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_descripcion_pizza_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/descripcion_de_la_pizza_8" />
+
+                <TextView
+                    android:id="@+id/textView_precio_pizza_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:padding="10dp"
+                    android:text="@string/precio_pizza_8"
+                    android:textAlignment="textEnd" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView_nombre_pizza_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="@string/nombre_pizza_9"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButton_pizza_9"
+                    style="@style/Botones"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:contentDescription=""
+                    android:padding="10dp"
+                    app:srcCompat="@mipmap/pulledbeef"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textView_descripcion_pizza_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/descripcion_de_la_pizza_9" />
+
+                <TextView
+                    android:id="@+id/textView_precio_pizza_9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:padding="10dp"
+                    android:text="@string/precio_pizza_9"
                     android:textAlignment="textEnd" />
 
             </TableRow>
