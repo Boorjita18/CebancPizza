@@ -51,7 +51,6 @@ public class Pedido extends android.app.Application {
     public void setUsuairo(Usuario usuario) {
         this.usuario = usuario;
     }
-
     public void borrarBebida(Bebida b){
         for (Bebida bebida : listaBebidas){
 
@@ -60,7 +59,6 @@ public class Pedido extends android.app.Application {
             }
         }
     }
-
     public void anadirBebida(Bebida b){
         if (b.cantidad==0) {
             borrarBebida(b);
@@ -85,7 +83,6 @@ public class Pedido extends android.app.Application {
             }
         }
     }
-
     public void anadirPostre(Postre p){
         if (p.cantidad==0) {
             borrarPostre(p);
