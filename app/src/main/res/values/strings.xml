@@ -12,6 +12,7 @@
     <string name="siguiente">Siguiente</string>
     <string name="btn_mas">+</string>
     <string name="btn_menos">-</string>
+    <string name="btn_annadir">Añadir</string>
 
     <!-- Activity elegir pizza -->
     <string name="titulo_pedidos">Pizzas</string>
@@ -120,5 +121,4 @@
 
     <string name="melon">Melón</string>
     <string name="precio_melon">Precio: 1,60€</string>
-    <string name="btn_annadir">Añadir</string>
 </resources>
