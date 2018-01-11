@@ -26,8 +26,9 @@ public class opcionesPizza extends AppCompatActivity {
     }
 
 
-    public void anadirBarbacoa(View v){
-        Pizza pizza = new Pizza(nombre.getText().toString(),"fina","individual",Double.parseDouble(precio.getText().toString()),1);
+    public void anadirPizzaPedido(View v){
+//        Pizza pizza = new Pizza(nombre.getText().toString(),"fina","individual",Double.parseDouble(precio.getText().toString()),1);
+        Pizza pizza = new Pizza("barbacoa","fina","individual",(double)123,1);
         ((Pedido) this.getApplication()).anadirPizza(pizza);
         Intent intent = new Intent(this, ElegirPizza.class);
 

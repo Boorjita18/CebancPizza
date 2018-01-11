@@ -127,7 +127,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:contentDescription="@string/hojaldre"
-                    app:srcCompat="@mipmap/tartachoco" />
+                    app:srcCompat="@mipmap/tartachocolate" />
 
 
                 <TextView
