@@ -34,9 +34,9 @@
         android:layout_marginTop="8dp"
         android:text="@string/postres"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textSize="36sp"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
+        style="@style/titulo"
+        android:textColor="@android:color/black"
+
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -126,8 +126,9 @@
                     android:id="@+id/imageView"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:contentDescription="@string/chocolate"
-                    app:srcCompat="@mipmap/tartachocolate" />
+                    android:contentDescription="@string/hojaldre"
+                    app:srcCompat="@mipmap/tartachoco" />
+
 
                 <TextView
                     android:id="@+id/textView13"
