@@ -10,6 +10,8 @@
     <string name="btn_pedido">Pedido</string>
     <string name="volver">Volver</string>
     <string name="siguiente">Siguiente</string>
+    <string name="btn_mas">+</string>
+    <string name="btn_menos">-</string>
 
     <!-- Activity elegir pizza -->
     <string name="titulo_pedidos">Pizzas</string>
@@ -63,6 +65,10 @@
     <string name="tipo_mediana">Mediana</string>
 
     <string name="cantidad_opciones_pizza">Cantidad</string>
+    <string name="cantidad_inicial_opciones_pizza">0</string>
+
+    <string name="precio_opciones_pizza">Precio</string>
+    <string name="precio_inicial_opciones_pizza">0,00 €</string>
 
     <!-- Activity elegir bebida -->
     <string name="bebidas">Bebidas</string>

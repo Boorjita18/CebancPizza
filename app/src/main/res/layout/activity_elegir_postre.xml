@@ -552,7 +552,8 @@
                     android:ems="10"
                     android:hint="@string/cantidad"
                     android:inputType="number"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    tools:ignore="TooManyViews" />
 
                 <AdapterViewFlipper />
 
