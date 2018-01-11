@@ -14,6 +14,11 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="titulo">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
     <style name="Texto" parent="@android:style/Widget.Holo.Light.TextView">
         <item name="android:textStyle">italic</item>
         <item name="android:textColor">@color/brown</item>
