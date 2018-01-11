@@ -108,8 +108,10 @@
 
     <string name="platano">Platano</string>
     <string name="precio_platano">Precio: 1,20€</string>
+
     <string name="pina">Piña</string>
     <string name="precio_pina">Precio: 1,60€</string>
+
     <string name="melon">Melón</string>
     <string name="precio_melon">Precio: 1,60€</string>
 </resources>
