@@ -51,6 +51,8 @@ public class Pizza {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-
+    public void anadirCantidad(int cantidad){
+        this.cantidad+=cantidad;
+    }
 
 }
