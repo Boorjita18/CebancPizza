@@ -1,5 +1,7 @@
 package com.cebancpizza.cebancpizza;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 /**
@@ -16,10 +18,13 @@ public class Pedido extends android.app.Application {
 
             if (pizza.getNombre().equals(p.getNombre()) && pizza.getTamaño().equals(p.getTamaño()) && pizza.getTipoMasa().equals(p.getTipoMasa()) ){
                 listaPizzas.get(listaPizzas.indexOf(pizza)).anadirCantidad(p.cantidad);
-
+                Toast.makeText(this, "añadido pizza " +listaPizzas.get(listaPizzas.indexOf(pizza)).getNombre()+"\ntotal: "+listaPizzas.get(listaPizzas.indexOf(pizza)).getCantidad(),
+                        Toast.LENGTH_SHORT).show();
             }
             else{
                 listaPizzas.add(p);
+                Toast.makeText(this, "añadida nueva pizza "+ p.getNombre(),
+                        Toast.LENGTH_SHORT).show();
             }
 
         }
