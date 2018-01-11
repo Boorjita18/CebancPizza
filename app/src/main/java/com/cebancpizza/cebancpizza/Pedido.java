@@ -13,7 +13,7 @@ public class Pedido extends android.app.Application {
     private Usuario usuario;
     private ArrayList<Pizza> listaPizzas= new ArrayList<Pizza>();
     private ArrayList<Bebida> listaBebidas= new ArrayList<Bebida>();
-    private ArrayList<Postre> listaPostress= new ArrayList<Postre>();
+    private ArrayList<Postre> listaPostres= new ArrayList<Postre>();
 
     public void comprobarPizza(Pizza p){
         boolean modificado = false;
@@ -51,4 +51,56 @@ public class Pedido extends android.app.Application {
     public void setUsuairo(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    public void borrarBebida(Bebida b){
+        for (Bebida bebida : listaBebidas){
+
+            if (bebida.getNombre().equals(b.getNombre())){
+                listaPizzas.remove(bebida);
+            }
+        }
+    }
+
+    public void anadirBebida(Bebida b){
+        if (b.cantidad==0) {
+            borrarBebida(b);
+        }else{
+            boolean modificado=false;
+            for (Bebida bebida : listaBebidas){
+
+                if (bebida.getNombre().equals(b.getNombre())){
+                    listaBebidas.get(listaBebidas.indexOf(bebida)).setCantidad(b.cantidad);
+                }
+            }
+            if (!modificado){
+                listaBebidas.add(b);
+            }
+        }
+    }
+    public void borrarPostre(Postre p){
+        for (Postre postre : listaPostres){
+
+            if (postre.getNombre().equals(p.getNombre())){
+                listaPostres.remove(postre);
+            }
+        }
+    }
+
+    public void anadirPostre(Postre p){
+        if (p.cantidad==0) {
+            borrarPostre(p);
+        }else{
+            boolean modificado=false;
+            for (Postre postre : listaPostres){
+
+                if (postre.getNombre().equals(p.getNombre())){
+                    listaPostres.get(listaPostres.indexOf(postre)).setCantidad(p.cantidad);
+                }
+            }
+            if (!modificado){
+                listaPostres.add(p);
+            }
+        }
+    }
+
 }
