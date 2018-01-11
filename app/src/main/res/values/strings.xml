@@ -14,6 +14,15 @@
     <string name="btn_menos">-</string>
     <string name="btn_annadir">Añadir</string>
 
+    <!-- Activity datos usuario -->
+    <string name="datos_de_contacto">Datos del usuario</string>
+    <string name="datos_del_usuario_nombre">Nombre</string>
+    <string name="datos_del_usuario_apellidos">apellidos</string>
+    <string name="datos_del_usuario_telefono">Telefono</string>
+    <string name="datos_del_usuario_direccion">direccion</string>
+    <string name="datos_del_usuario_email">email</string>
+
+
     <!-- Activity elegir pizza -->
     <string name="titulo_pedidos">Pizzas</string>
 
@@ -66,7 +75,7 @@
     <string name="tipo_mediana">Mediana</string>
 
     <string name="cantidad_opciones_pizza">Cantidad</string>
-    <string name="cantidad_inicial_opciones_pizza">0</string>
+    <string name="cantidad_inicial_opciones_pizza">1</string>
 
     <string name="precio_opciones_pizza">Precio</string>
     <string name="precio_inicial_opciones_pizza">0,00 €</string>
