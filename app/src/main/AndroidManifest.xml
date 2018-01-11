@@ -9,23 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:label="">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ElegirPizza" />
-        <activity
-            android:name=".datosUsuario"
-            android:label="">
-        </activity>
-
-
-                    <activity android:name=".ElegirBebida" />
-        <activity android:name=".ElegirPostre" />
-        <activity android:name=".opcionesPizza"></activity>
+        <activity android:name=".ElegirPizza" android:label="" />
+        <activity android:name=".datosUsuario" android:label=""/>
+        <activity android:name=".ElegirBebida" android:label="" />
+        <activity android:name=".ElegirPostre" android:label="" />
+        <activity android:name=".opcionesPizza" android:label=""></activity>
     </application>
 
 </manifest>
