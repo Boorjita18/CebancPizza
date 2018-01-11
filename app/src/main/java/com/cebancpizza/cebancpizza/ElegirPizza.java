@@ -12,8 +12,7 @@ public class ElegirPizza extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_elegir_pizza);
-        Toast.makeText(this, ((Pedido) this.getApplication()).getUsuario().getNombre()+"\n" + ((Pedido) this.getApplication()).getUsuario().getDireccion(),
-                Toast.LENGTH_SHORT).show();
+
     }
 
 

@@ -12,6 +12,8 @@ public class Pedido extends android.app.Application {
 
     private Usuario usuario;
     private ArrayList<Pizza> listaPizzas= new ArrayList<Pizza>();
+    private ArrayList<Bebida> listaBebidas= new ArrayList<Bebida>();
+    private ArrayList<Postre> listaPostress= new ArrayList<Postre>();
 
     public void comprobarPizza(Pizza p){
         boolean modificado = false;
