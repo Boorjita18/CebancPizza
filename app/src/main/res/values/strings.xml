@@ -8,7 +8,7 @@
 
     <!-- Activity elegir pizza -->
     <string name="titulo_pedidos">Pizzas</string>
-    <string name="btn_pedido">PEDIDO</string>
+    <string name="btn_pedido">Pedido</string>
 
     <string name="nombre_pizza_1">Barbacoa</string>
     <string name="descripcion_de_la_pizza_1">Descripción de la pizza</string>
