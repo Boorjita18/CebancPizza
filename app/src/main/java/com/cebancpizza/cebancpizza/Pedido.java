@@ -1,24 +1,52 @@
 package com.cebancpizza.cebancpizza;
 
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
 /**
- * Created by gorka on 10/01/2018.
+ * Created by adminportatil on 11/01/2018.
  */
 
-public class Pedido {
-    Usuario usuario;
-    Pizza[] listaPizzas;
-    Postre[] listaPostres;
-    Bebida[] listaBebidas;
+public class Pedido extends android.app.Application {
 
-    public Pedido(){
+    private Usuario usuario;
+    private ArrayList<Pizza> listaPizzas= new ArrayList<Pizza>();
+
+    public void comprobarPizza(Pizza p){
+        boolean modificado = false;
+        for (Pizza pizza : listaPizzas){
+
+            if (pizza.getNombre().equals(p.getNombre()) && pizza.getTamaño().equals(p.getTamaño()) && pizza.getTipoMasa().equals(p.getTipoMasa()) ){
+                listaPizzas.get(listaPizzas.indexOf(pizza)).anadirCantidad(p.cantidad);
+                Toast.makeText(this, "añadido pizza " +listaPizzas.get(listaPizzas.indexOf(pizza)).getNombre()+"\ntotal: "+listaPizzas.get(listaPizzas.indexOf(pizza)).getCantidad(),
+                        Toast.LENGTH_SHORT).show();
+                modificado = true;
+            }
+        }
+        if (!modificado){
+            listaPizzas.add(p);
+            Toast.makeText(this, "añadida nueva pizza "+ p.getNombre(),
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void anadirUsuario(Usuario usuario){
-        this.usuario=usuario;
+
+    public void anadirPizza(Pizza p){
+        if (listaPizzas.size()>0) {
+            comprobarPizza(p);
+        }else{
+            listaPizzas.add(p);
+            Toast.makeText(this, "añadida nueva pizza "+ p.getNombre(),
+                    Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public Usuario getUsuario(){
+    public Usuario getUsuario() {
         return usuario;
     }
 
+    public void setUsuairo(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }

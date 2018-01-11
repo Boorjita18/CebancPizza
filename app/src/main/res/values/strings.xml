@@ -1,49 +1,133 @@
 <resources>
     <string name="app_name">CebancPizza</string>
-    <string name="hola">hello</string>
-    <string name="_943_31_69_00">943 31 69 00</string>
-    <string name="berio_pasealekua_50_20018_donostia_gipuzkoa">Berio Pasealekua, 50, 20018 Donostia, Gipuzkoa</string>
-    <string name="empezar_pedido">Empezar Pedido</string>
-    <string name="cebanc_cebanc_com">cebanc@cebanc.com</string>
+    <string name="telefono">943 31 69 00</string>
+    <string name="direccion">Berio Pasealekua, 50, 20018 Donostia, Gipuzkoa</string>
+    <string name="email">cebanc@cebanc.com</string>
     <string name="cebanc_pizza">Cebanc Pizza</string>
-    <string name="byn_empezar">Empezar</string>
-    <string name="descripcion_de_la_pizza">Descripción de la pizza</string>
-    <string name="imagen_pizza">Imagen pizza</string>
-    <string name="nombre_pizza">Nombre Pizza</string>
+
+    <!-- Botones -->
+    <string name="btn_empezar">Empezar Pedido</string>
     <string name="btn_pedido">Pedido</string>
-    <string name="titulo_pedidos">Pizzas</string>
-    <string name="precio">0,00 €</string>
-    <string name="bebidas">Bebidas</string>
-    <string name="cantidad">Cantidad</string>
-    <string name="precio_cocacola">Precio: 2,20 €</string>
-    <string name="cocacola">Coca Cola</string>
-    <string name="precio_limon">Precio: 2,10 €</string>
-    <string name="limon">Limon</string>
-    <string name="agua">Agua</string>
-    <string name="cerveza">Cerveza</string>
-    <string name="nestea">Nestea</string>
-    <string name="precio_nestea">Precio: 1,80 €</string>
-    <string name="precio_redbull">Precio: 3,00€</string>
-    <string name="red_bull">Red bull</string>
-    <string name="siguiente">Siguiente</string>
     <string name="volver">Volver</string>
-    <string name="tartas">Tartas</string>
-    <string name="chocolate">Chocolate</string>
-    <string name="hojaldre">Hojaldre</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="btn_mas">+</string>
+    <string name="btn_menos">-</string>
+    <string name="btn_annadir">Añadir</string>
+
+    <!-- Activity datos usuario -->
+    <string name="datos_de_contacto">Datos del usuario</string>
+    <string name="datos_del_usuario_nombre">Nombre</string>
+    <string name="datos_del_usuario_apellidos">apellidos</string>
+    <string name="datos_del_usuario_telefono">Telefono</string>
+    <string name="datos_del_usuario_direccion">direccion</string>
+    <string name="datos_del_usuario_email">email</string>
+
+
+    <!-- Activity elegir pizza -->
+    <string name="titulo_pedidos">Pizzas</string>
+
+    <string name="nombre_pizza_1">Barbacoa</string>
+    <string name="descripcion_de_la_pizza_1">Salsa barbacoa, queso 100% mozzarella, ternera especiada, cebolla, bacon, maíz.</string>
+    <string name="precio_pizza_1">0,00 €</string>
+
+    <string name="nombre_pizza_2">Campiña</string>
+    <string name="descripcion_de_la_pizza_2">Salsa de tomate, extra de queso 100% mozzarella, champiñón, pimiento verde, cebolla, aceitunas negras y tomate natural.</string>
+    <string name="precio_pizza_2">0,00 €</string>
+
+    <string name="nombre_pizza_3">Gourmet</string>
+    <string name="descripcion_de_la_pizza_3">Abundantes filetes de carne de ternera, espárragos verdes finos, tomates frescos y salsa holandesa, aderezada con pimienta de bistec picante.</string>
+    <string name="precio_pizza_3">0,00 €</string>
+
+    <string name="nombre_pizza_4">Hawaiana</string>
+    <string name="descripcion_de_la_pizza_4">Salsa de tomate, extra de queso 100% mozzarella, doble de York y piña.</string>
+    <string name="precio_pizza_4">0,00 €</string>
+
+    <string name="nombre_pizza_5">Jamón y Queso</string>
+    <string name="descripcion_de_la_pizza_5"></string>
+    <string name="precio_pizza_5">0,00 €</string>
+
+    <string name="nombre_pizza_6">Margarita</string>
+    <string name="descripcion_de_la_pizza_6">Crea tu propia pizza. Sobre una base de salsa de tomate y queso 100% mozzarella, añade los ingredientes que tú quieras.</string>
+    <string name="precio_pizza_6">0,00 €</string>
+
+    <string name="nombre_pizza_7">Sin Gluten</string>
+    <string name="descripcion_de_la_pizza_7">Crea tu propia pizza. Con queso 100% mozzarella, salsa a elegir entre tomate y BBQ y nuestros toppings: pollo a la parrilla, bacon o york.</string>
+    <string name="precio_pizza_7">0,00 €</string>
+
+    <string name="nombre_pizza_8">Pepperoni</string>
+    <string name="descripcion_de_la_pizza_8">Salsa de tomate, extra de queso 100% mozzarella y doble de pepperoni.</string>
+    <string name="precio_pizza_8">0,00 €</string>
+
+    <string name="nombre_pizza_9">Pulled Beef</string>
+    <string name="descripcion_de_la_pizza_9">Salsa BBQ, mozzarella, ternera deshilachada asada lentamente, cebolla, bacon, salsa chimichurri.</string>
+    <string name="precio_pizza_9">0,00 €</string>
+
+    <!-- Activity opciones pizza -->
+    <string name="titulo_opcion_pizza">Tipo Pizza</string>
+
+    <string name="tipo_de_masa">Tipo de masa</string>
+    <string name="masa_normal">Masa normal</string>
+    <string name="masa_fina">Masa fina</string>
+
+    <string name="tamanno">Tamaño</string>
+    <string name="tipo_familiar">Familiar</string>
+    <string name="tipo_individual">Individual</string>
+    <string name="tipo_mediana">Mediana</string>
+
+    <string name="cantidad_opciones_pizza">Cantidad</string>
+    <string name="cantidad_inicial_opciones_pizza">1</string>
+
+    <string name="precio_opciones_pizza">Precio</string>
+    <string name="precio_inicial_opciones_pizza">0,00 €</string>
+
+    <!-- Activity elegir bebida -->
+    <string name="bebidas">Bebidas</string>
+    <string name="cantidad">Cantidad:</string>
+
+    <string name="cocacola">Coca Cola</string>
+    <string name="precio_cocacola">Precio: 2,30 € </string>
+
+    <string name="limon">Limon</string>
+    <string name="precio_limon">Precio: 2,10€ </string>
+
+    <string name="red_bull">Red Bull</string>
+    <string name="precio_redbull">Precio: 3,00 €</string>
+
+    <string name="nestea">Nestea</string>
+    <string name="precio_nestea">Precio: 1,90 €</string>
+
+    <string name="cerveza">Cerveza</string>
+    <string name="precio_cerveza">Precio: 2,20€</string>
+
+    <string name="agua">Agua</string>
+    <string name="precio_agua">Precio: 1,50 €</string>
+
+    <!-- Activity elegir postre -->
     <string name="postres">Postres</string>
-    <string name="manzana">Manzana</string>
-    <string name="precio_hojaldre">Precio: 3,80 €</string>
-    <string name="precio_manzana">Precio 4,20 €</string>
-    <string name="precio_tarta_chocolate">Precio 4,00€</string>
-    <string name="frutas">Frutas</string>
-    <string name="platano">Platano</string>
-    <string name="melon">Melón</string>
-    <string name="pina">Piña</string>
-    <string name="precio_melon">Precio: 2,60 €</string>
-    <string name="precio_platano">Precio: 1,30 €</string>
-    <string name="precio_pina">Precio: 1,90 €</string>
+
+    <string name="tartas">Tartas</string>
     <string name="helados">Helados</string>
+    <string name="frutas">Frutas</string>
+
+    <string name="chocolate">Chocolate</string>
+    <string name="precio_tarta_chocolate">Precio: 3,10€</string>
+
+    <string name="hojaldre">Hojaldre</string>
+    <string name="precio_hojaldre">Precio: 3,30€</string>
+
+    <string name="manzana">Manzana</string>
+    <string name="precio_manzana">Precio: 3,50€</string>
+
     <string name="vainilla">Vainilla</string>
     <string name="yogurt">Yogurt</string>
-    <string name="precio_helado">Precio: 2,20 €</string>
+    <string name="precio_helado">Precio: 2,00 €</string>
+
+    <string name="platano">Platano</string>
+    <string name="precio_platano">Precio: 1,20€</string>
+
+    <string name="pina">Piña</string>
+    <string name="precio_pina">Precio: 1,60€</string>
+
+    <string name="melon">Melón</string>
+    <string name="precio_melon">Precio: 1,60€</string>
 </resources>

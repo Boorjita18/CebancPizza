@@ -3,7 +3,7 @@
     package="com.cebancpizza.cebancpizza">
 
     <application
-        android:name=".Globales"
+        android:name=".Pedido"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -17,9 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".ElegirPizza" />
-        <activity android:name=".datosUsuario" />
-        <activity android:name=".ElegirBebida" />
-        <activity android:name=".ElegirPostre"></activity>
+        <activity
+            android:name=".datosUsuario"
+            android:label="">
+        </activity>
+
+
+                    <activity android:name=".ElegirBebida" />
+        <activity android:name=".ElegirPostre" />
+        <activity android:name=".opcionesPizza"></activity>
     </application>
 
 </manifest>
