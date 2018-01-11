@@ -50,16 +50,18 @@
     <string name="descripcion_de_la_pizza_9">Descripción de la pizza</string>
     <string name="precio_pizza_9">0,00 €</string>
 
-
     <!-- Activity opciones pizza -->
     <string name="titulo_opcion_pizza">Tipo Pizza</string>
+
     <string name="tipo_de_masa">Tipo de masa</string>
     <string name="masa_normal">Masa normal</string>
     <string name="masa_fina">Masa fina</string>
+
     <string name="tamanno">Tamaño</string>
     <string name="tipo_familiar">Familiar</string>
     <string name="tipo_individual">Individual</string>
     <string name="tipo_mediana">Mediana</string>
+
     <string name="cantidad_opciones_pizza">Cantidad</string>
 
     <!-- Activity elegir bebida -->
