@@ -17,10 +17,10 @@ public class opcionesPizza extends AppCompatActivity {
     EditText cantidad;
     RadioGroup rgMasa;
     RadioGroup rgTamanno;
-    String masa;
-    double precioMasa;
-    String tamanno;
-    double precioTamanno;
+    String masa="masa fina";
+    double precioMasa=0.0;
+    String tamanno="individual";
+    double precioTamanno=0.0;
     double precioUnitario;
 
     @Override
@@ -34,7 +34,7 @@ public class opcionesPizza extends AppCompatActivity {
         cantidad = (EditText) findViewById(R.id.editText13);
         rgMasa = (RadioGroup) findViewById(R.id.radioGroup2);
         rgTamanno = (RadioGroup) findViewById(R.id.radioGroup3);
-
+        precioUnitario=Double.parseDouble(intent.getStringExtra("Precio"));
         nombre.setText(intent.getStringExtra("Nombre"));
         precio.setText(intent.getStringExtra("Precio"));
 
@@ -70,35 +70,41 @@ public class opcionesPizza extends AppCompatActivity {
         });
     }
 
-    public void masUno() {
+    public void masUno(View v) {
         int iCant;
-        iCant = Integer.parseInt(cantidad.toString());
+        iCant = Integer.parseInt(cantidad.getText().toString());
         iCant++;
-        cantidad.setText(iCant);
+        cantidad.setText(String.valueOf(iCant));
         calcularPrecio();
     }
 
-    public void menosUno() {
+    public void menosUno(View v) {
         int iCant;
-        iCant = Integer.parseInt(cantidad.toString());
+        iCant = Integer.parseInt(cantidad.getText().toString());
         iCant--;
-        cantidad.setText(iCant);
+        if (iCant<0){
+            iCant=0;
+        }
+        cantidad.setText(String.valueOf(iCant));
         calcularPrecio();
     }
 
     public void calcularPrecio() {
         double precioTotal;
         precioUnitario = Double.parseDouble(intent.getStringExtra("Precio")) + precioMasa + precioTamanno;
-        precioTotal = precioUnitario * Integer.parseInt(cantidad.toString());
+        precioTotal = precioUnitario * Integer.parseInt(cantidad.getText().toString());
         precio.setText(Double.toString(precioTotal));
     }
 
     public void anadirPizzaPedido(View v){
 //        Pizza pizza = new Pizza(nombre.getText().toString(),"fina","individual",Double.parseDouble(precio.getText().toString()),1);
-        Pizza pizza = new Pizza(nombre.getText().toString(),masa,tamanno,precioUnitario,Integer.parseInt(cantidad.toString()));
+        Pizza pizza = new Pizza(nombre.getText().toString(),masa,tamanno,precioUnitario,Integer.parseInt(cantidad.getText().toString()));
         ((Pedido) this.getApplication()).anadirPizza(pizza);
         Intent intent = new Intent(this, ElegirPizza.class);
 
         startActivity(intent);
+    }
+    public void volver(View v){
+        finish();
     }
 }

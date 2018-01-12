@@ -36,7 +36,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/email"
-        android:textColor="@color/black"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -53,13 +53,13 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/telefono"
-        android:textColor="@color/black"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintBottom_toTopOf="@+id/textView2" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView2"
@@ -70,13 +70,13 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/direccion"
-        android:textColor="@color/black"
-        app:layout_constraintHorizontal_bias="0.05"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:layout_constraintBottom_toTopOf="@+id/textView" />
+        app:layout_constraintVertical_bias="0.979" />
 
     <ImageView
         android:id="@+id/imageView"

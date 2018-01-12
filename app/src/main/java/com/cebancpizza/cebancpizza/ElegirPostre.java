@@ -43,6 +43,34 @@ public class ElegirPostre extends AppCompatActivity {
         btnSiguiente.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+
+                if (editTartaChoco.getText().toString().isEmpty()) {
+                    editTartaChoco.setText("0");
+                }
+                if (editHojaldre.getText().toString().isEmpty()) {
+                    editHojaldre.setText("0");
+                }
+                if (editManzana.getText().toString().isEmpty()) {
+                    editManzana.setText("0");
+                }
+                if (editHeladoChoco.getText().toString().isEmpty()) {
+                    editHeladoChoco.setText("0");
+                }
+                if (editVainilla.getText().toString().isEmpty()) {
+                    editVainilla.setText("0");
+                }
+                if (editYogurt.getText().toString().isEmpty()) {
+                    editYogurt.setText("0");
+                }
+                if (editPlatano.getText().toString().isEmpty()) {
+                    editPlatano.setText("0");
+                }
+                if (editPina.getText().toString().isEmpty()) {
+                    editPina.setText("0");
+                }
+                if (editMelon.getText().toString().isEmpty()) {
+                    editMelon.setText("0");
+                }
                 añadirPostrePedido("Tarta de Chocolate",Integer.parseInt(editTartaChoco.getText().toString()),Double.parseDouble("3.10"));
                 añadirPostrePedido("Tarta de Hojaldre",Integer.parseInt(editHojaldre.getText().toString()),Double.parseDouble("3.30"));
                 añadirPostrePedido("Tarta de Manzana",Integer.parseInt(editManzana.getText().toString()),Double.parseDouble("3.50"));
@@ -52,23 +80,30 @@ public class ElegirPostre extends AppCompatActivity {
                 añadirPostrePedido("Platano",Integer.parseInt(editPlatano.getText().toString()),Double.parseDouble("1.20"));
                 añadirPostrePedido("Piña",Integer.parseInt(editPina.getText().toString()),Double.parseDouble("1.60"));
                 añadirPostrePedido("Melón",Integer.parseInt(editMelon.getText().toString()),Double.parseDouble("1.60"));
+
+                Intent intent = new Intent(ElegirPostre.this, revisarPedido.class);
+                startActivity(intent);
             }
         });
 
         btnPedido.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ElegirPostre.this, Pedido.class);
+                Intent intent = new Intent(ElegirPostre.this, revisarPedido.class);
                 startActivity(intent);
+            }
+        });
+
+        btnVolver.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
 
     private void añadirPostrePedido(String s, int i, double v) {
         Postre postre = new Postre(s, i, v);
-        postre.setNombre(s);
-        postre.setCantidad(i);
-        postre.setPrecio(v);
         ((Pedido) this.getApplication()).anadirPostre(postre);
     }
 }

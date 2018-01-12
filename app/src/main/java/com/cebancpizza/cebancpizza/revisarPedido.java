@@ -23,13 +23,22 @@ public class revisarPedido extends AppCompatActivity {
          ArrayList<Pizza> listaPizzas= ((Pedido) this.getApplication()).getListaPizzas();
          ArrayList<Bebida> listaBebidas=((Pedido) this.getApplication()).getListaBebidas();
          ArrayList<Postre> listaPostres= ((Pedido) this.getApplication()).getListaPostres();
-
+         String texto="";
 
          for(Pizza pizza:listaPizzas){
-             pedidoCompleto.setText("X"+pizza.getCantidad()+"-"+pizza.getNombre() + pizza.getTamaño() + " masa " + pizza.getTipoMasa() + pizza.getCantidad()*pizza.getPrecio()+"\n");
-             total+=pizza.getCantidad()*pizza.getPrecio();
-         }
-    totalPedido.setText(Double.toString(total));
+            texto+="X"+pizza.getCantidad()+"-"+pizza.getNombre() +" " + pizza.getTamaño() +" "+ pizza.getTipoMasa()+ " " + pizza.getCantidad()*pizza.getPrecio()+"\n";
+            total+=pizza.getCantidad()*pizza.getPrecio();
+        }
+        for(Bebida bebida:listaBebidas){
+            texto+="X"+bebida.getCantidad()+"-"+bebida.getNombre()+" " + bebida.getCantidad()*bebida.getPrecio()+"\n";
+            total+=bebida.getCantidad()*bebida.getPrecio();
+        }
+        for(Postre postre:listaPostres){
+            texto+="X"+postre.getCantidad()+"-"+postre.getNombre()+" " + postre.getCantidad()*postre.getPrecio()+"\n";
+            total+=postre.getCantidad()*postre.getPrecio();
+        }
+        totalPedido.setText(Double.toString(total));
+        pedidoCompleto.setText(texto);
     }
 
     public void volver(View v){

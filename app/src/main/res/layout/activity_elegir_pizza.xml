@@ -88,13 +88,14 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_1"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:cropToPadding="false"
+                    android:elevation="0dp"
                     android:onClick="anadirBarbacoa"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/barbacoa"
                     tools:ignore="ContentDescription" />
 
@@ -139,13 +140,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_2"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
                     android:onClick="anadirCampinna"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/campina"
                     tools:ignore="ContentDescription" />
 
@@ -190,13 +190,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_3"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
                     android:onClick="anadirGourmet"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/gourmet"
                     tools:ignore="ContentDescription" />
 
@@ -244,13 +243,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_4"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
                     android:onClick="anadirHawaiana"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/hawaiana"
                     tools:ignore="ContentDescription" />
 
@@ -295,13 +293,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_5"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
                     android:onClick="anadirJamonQueso"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/jamonqueso"
                     tools:ignore="ContentDescription" />
 
@@ -346,13 +343,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_6"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
                     android:onClick="anadirMargarita"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/margarita"
                     tools:ignore="ContentDescription" />
 
@@ -397,13 +393,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_7"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
                     android:onClick="anadirSinGluten"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/messiesingluten"
                     tools:ignore="ContentDescription" />
 
@@ -448,13 +443,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_8"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
                     android:onClick="anadirPepperoni"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/peperoni"
                     tools:ignore="ContentDescription" />
 
@@ -499,13 +493,12 @@
 
                 <ImageButton
                     android:id="@+id/imageButton_pizza_9"
-                    style="@style/Botones"
+                    style="@style/BotonInvisible"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
                     android:onClick="anadirPulledBeef"
-                    android:padding="10dp"
                     app:srcCompat="@mipmap/pulledbeef"
                     tools:ignore="ContentDescription" />
 
@@ -542,6 +535,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="elegirBebida"
         android:text="@string/siguiente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -549,8 +544,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        tools:ignore="RtlHardcoded"
-        android:layout_marginTop="8dp" />
+        tools:ignore="RtlHardcoded" />
 
     <Button
         android:id="@+id/btn_atras"
