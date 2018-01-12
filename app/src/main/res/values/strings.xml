@@ -28,39 +28,39 @@
 
     <string name="nombre_pizza_1">Barbacoa</string>
     <string name="descripcion_de_la_pizza_1">Salsa barbacoa, queso 100% mozzarella, ternera especiada, cebolla, bacon, maíz.</string>
-    <string name="precio_pizza_1">0,00 €</string>
+    <string name="precio_pizza_1">5,00</string>
 
     <string name="nombre_pizza_2">Campiña</string>
     <string name="descripcion_de_la_pizza_2">Salsa de tomate, extra de queso 100% mozzarella, champiñón, pimiento verde, cebolla, aceitunas negras y tomate natural.</string>
-    <string name="precio_pizza_2">0,00 €</string>
+    <string name="precio_pizza_2">6,00</string>
 
     <string name="nombre_pizza_3">Gourmet</string>
     <string name="descripcion_de_la_pizza_3">Abundantes filetes de carne de ternera, espárragos verdes finos, tomates frescos y salsa holandesa, aderezada con pimienta de bistec picante.</string>
-    <string name="precio_pizza_3">0,00 €</string>
+    <string name="precio_pizza_3">7,50</string>
 
     <string name="nombre_pizza_4">Hawaiana</string>
     <string name="descripcion_de_la_pizza_4">Salsa de tomate, extra de queso 100% mozzarella, doble de York y piña.</string>
-    <string name="precio_pizza_4">0,00 €</string>
+    <string name="precio_pizza_4">6,00</string>
 
     <string name="nombre_pizza_5">Jamón y Queso</string>
     <string name="descripcion_de_la_pizza_5"></string>
-    <string name="precio_pizza_5">0,00 €</string>
+    <string name="precio_pizza_5">5,00</string>
 
     <string name="nombre_pizza_6">Margarita</string>
     <string name="descripcion_de_la_pizza_6">Crea tu propia pizza. Sobre una base de salsa de tomate y queso 100% mozzarella, añade los ingredientes que tú quieras.</string>
-    <string name="precio_pizza_6">0,00 €</string>
+    <string name="precio_pizza_6">5,00</string>
 
     <string name="nombre_pizza_7">Sin Gluten</string>
     <string name="descripcion_de_la_pizza_7">Crea tu propia pizza. Con queso 100% mozzarella, salsa a elegir entre tomate y BBQ y nuestros toppings: pollo a la parrilla, bacon o york.</string>
-    <string name="precio_pizza_7">0,00 €</string>
+    <string name="precio_pizza_7">6,00</string>
 
     <string name="nombre_pizza_8">Pepperoni</string>
     <string name="descripcion_de_la_pizza_8">Salsa de tomate, extra de queso 100% mozzarella y doble de pepperoni.</string>
-    <string name="precio_pizza_8">0,00 €</string>
+    <string name="precio_pizza_8">7,00</string>
 
     <string name="nombre_pizza_9">Pulled Beef</string>
     <string name="descripcion_de_la_pizza_9">Salsa BBQ, mozzarella, ternera deshilachada asada lentamente, cebolla, bacon, salsa chimichurri.</string>
-    <string name="precio_pizza_9">0,00 €</string>
+    <string name="precio_pizza_9">7,50</string>
 
     <!-- Activity opciones pizza -->
     <string name="titulo_opcion_pizza">Tipo Pizza</string>
@@ -78,7 +78,7 @@
     <string name="cantidad_inicial_opciones_pizza">1</string>
 
     <string name="precio_opciones_pizza">Precio</string>
-    <string name="precio_inicial_opciones_pizza">0,00 €</string>
+    <string name="precio_inicial_opciones_pizza">0.00</string>
 
     <!-- Activity elegir bebida -->
     <string name="bebidas">Bebidas</string>

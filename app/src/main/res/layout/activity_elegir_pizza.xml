@@ -144,6 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:onClick="anadirCampinna"
                     android:padding="10dp"
                     app:srcCompat="@mipmap/campina"
                     tools:ignore="ContentDescription" />
@@ -194,6 +195,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:onClick="anadirGourmet"
                     android:padding="10dp"
                     app:srcCompat="@mipmap/gourmet"
                     tools:ignore="ContentDescription" />
@@ -247,6 +249,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:onClick="anadirHawaiana"
                     android:padding="10dp"
                     app:srcCompat="@mipmap/hawaiana"
                     tools:ignore="ContentDescription" />
@@ -297,6 +300,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:onClick="anadirJamonQueso"
                     android:padding="10dp"
                     app:srcCompat="@mipmap/jamonqueso"
                     tools:ignore="ContentDescription" />
@@ -347,6 +351,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:onClick="anadirMargarita"
                     android:padding="10dp"
                     app:srcCompat="@mipmap/margarita"
                     tools:ignore="ContentDescription" />
@@ -397,6 +402,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:onClick="anadirSinGluten"
                     android:padding="10dp"
                     app:srcCompat="@mipmap/messiesingluten"
                     tools:ignore="ContentDescription" />
@@ -447,6 +453,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:onClick="anadirPepperoni"
                     android:padding="10dp"
                     app:srcCompat="@mipmap/peperoni"
                     tools:ignore="ContentDescription" />
@@ -497,6 +504,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     android:contentDescription=""
+                    android:onClick="anadirPulledBeef"
                     android:padding="10dp"
                     app:srcCompat="@mipmap/pulledbeef"
                     tools:ignore="ContentDescription" />
