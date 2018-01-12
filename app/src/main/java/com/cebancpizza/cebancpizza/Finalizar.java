@@ -40,6 +40,7 @@ public class Finalizar extends AppCompatActivity {
 
     public void finalizar(View v){
 
+        ((Pedido) this.getApplication()).borrarPedido();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 

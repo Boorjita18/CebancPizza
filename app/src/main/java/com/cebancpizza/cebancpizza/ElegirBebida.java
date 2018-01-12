@@ -88,12 +88,12 @@ public class ElegirBebida extends AppCompatActivity {
     private void añadirBebidasPedido(String s, int i, float v) {
 
 
-        Bebida bebida = new Bebida(s, i, v);
-
-        ((Pedido) this.getApplication()).anadirBebida(bebida);
 //        Intent intent = new Intent(this, ElegirPizza.class);
 //
 //        startActivity(intent);
+        Bebida bebida = new Bebida(s, i, v);
+
+        ((Pedido) this.getApplication()).anadirBebida(bebida);
     }
 
 }
