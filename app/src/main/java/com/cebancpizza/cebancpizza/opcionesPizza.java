@@ -21,6 +21,7 @@ public class opcionesPizza extends AppCompatActivity {
     double precioMasa;
     String tamanno;
     double precioTamanno;
+    double precioUnitario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,13 +88,14 @@ public class opcionesPizza extends AppCompatActivity {
 
     public void calcularPrecio() {
         double precioTotal;
-        precioTotal = (Double.parseDouble(intent.getStringExtra("Precio")) + precioMasa + precioTamanno) * Integer.parseInt(cantidad.toString());
+        precioUnitario = Double.parseDouble(intent.getStringExtra("Precio")) + precioMasa + precioTamanno;
+        precioTotal = precioUnitario * Integer.parseInt(cantidad.toString());
         precio.setText(Double.toString(precioTotal));
     }
 
     public void anadirPizzaPedido(View v){
 //        Pizza pizza = new Pizza(nombre.getText().toString(),"fina","individual",Double.parseDouble(precio.getText().toString()),1);
-        Pizza pizza = new Pizza(nombre.getText().toString(),masa,tamanno,Double.parseDouble(nombre.getText().toString()),Integer.parseInt(cantidad.toString()));
+        Pizza pizza = new Pizza(nombre.getText().toString(),masa,tamanno,precioUnitario,Integer.parseInt(cantidad.toString()));
         ((Pedido) this.getApplication()).anadirPizza(pizza);
         Intent intent = new Intent(this, ElegirPizza.class);
 
