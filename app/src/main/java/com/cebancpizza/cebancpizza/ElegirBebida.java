@@ -1,6 +1,7 @@
 package com.cebancpizza.cebancpizza;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class ElegirBebida extends AppCompatActivity {
     EditText editAgua;
     Button btnSiguiente;
     Button btnVolver;
+    Button btnPedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class ElegirBebida extends AppCompatActivity {
         editAgua = (EditText) findViewById(R.id.editText5);
         btnSiguiente = (Button) findViewById(R.id.button4);
         btnVolver = (Button) findViewById(R.id.button3);
+        btnPedido = (Button) findViewById(R.id.button2);
 
         btnSiguiente.setOnClickListener(new View.OnClickListener(){
 
@@ -44,6 +47,14 @@ public class ElegirBebida extends AppCompatActivity {
                 añadirBebidasPedido("Agua",Integer.parseInt(editAgua.getText().toString()),Double.parseDouble("1.50") );
 
 
+            }
+        });
+
+        btnPedido.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ElegirBebida.this, ElegirPostre.class);
+                startActivity(intent);
             }
         });
 
