@@ -18,10 +18,10 @@ public class opcionesPizza extends AppCompatActivity {
     RadioGroup rgMasa;
     RadioGroup rgTamanno;
     String masa="masa fina";
-    double precioMasa=0.0;
+    Float precioMasa= Float.parseFloat("0.0");
     String tamanno="individual";
-    double precioTamanno=0.0;
-    double precioUnitario;
+    Float precioTamanno=Float.parseFloat("0.0");
+    Float precioUnitario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class opcionesPizza extends AppCompatActivity {
         cantidad = (EditText) findViewById(R.id.editText13);
         rgMasa = (RadioGroup) findViewById(R.id.radioGroup2);
         rgTamanno = (RadioGroup) findViewById(R.id.radioGroup3);
-        precioUnitario=Double.parseDouble(intent.getStringExtra("Precio"));
+        precioUnitario=Float.parseFloat(intent.getStringExtra("Precio"));
         nombre.setText(intent.getStringExtra("Nombre"));
         precio.setText(intent.getStringExtra("Precio"));
 
@@ -43,10 +43,10 @@ public class opcionesPizza extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (checkedId == R.id.radioButton) {
                     masa = "masa fina";
-                    precioMasa = 0.00;
+                    precioMasa =Float.parseFloat("0.00");
                 } else if (checkedId == R.id.radioButton2) {
                     masa = "masa normal";
-                    precioMasa = 1.00;
+                    precioMasa = Float.parseFloat("1.00");
                 }
                 calcularPrecio();
             }
@@ -57,13 +57,13 @@ public class opcionesPizza extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (checkedId == R.id.radioButton3) {
                     tamanno = "individual";
-                    precioTamanno = 0.00;
+                    precioTamanno = Float.parseFloat("0.00");
                 } else if (checkedId == R.id.radioButton5) {
                     tamanno = "mediana";
-                    precioTamanno = 2.00;
+                    precioTamanno = Float.parseFloat("2.00");
                 } else if (checkedId == R.id.radioButton6) {
                     tamanno = "familiar";
-                    precioTamanno = 4.00;
+                    precioTamanno = Float.parseFloat("4.00");
                 }
                 calcularPrecio();
             }
@@ -91,7 +91,7 @@ public class opcionesPizza extends AppCompatActivity {
 
     public void calcularPrecio() {
         double precioTotal;
-        precioUnitario = Double.parseDouble(intent.getStringExtra("Precio")) + precioMasa + precioTamanno;
+        precioUnitario = Float.parseFloat(intent.getStringExtra("Precio")) + precioMasa + precioTamanno;
         precioTotal = precioUnitario * Integer.parseInt(cantidad.getText().toString());
         precio.setText(Double.toString(precioTotal));
     }

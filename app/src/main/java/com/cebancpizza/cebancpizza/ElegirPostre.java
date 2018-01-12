@@ -71,15 +71,15 @@ public class ElegirPostre extends AppCompatActivity {
                 if (editMelon.getText().toString().isEmpty()) {
                     editMelon.setText("0");
                 }
-                añadirPostrePedido("Tarta de Chocolate",Integer.parseInt(editTartaChoco.getText().toString()),Double.parseDouble("3.10"));
-                añadirPostrePedido("Tarta de Hojaldre",Integer.parseInt(editHojaldre.getText().toString()),Double.parseDouble("3.30"));
-                añadirPostrePedido("Tarta de Manzana",Integer.parseInt(editManzana.getText().toString()),Double.parseDouble("3.50"));
-                añadirPostrePedido("Helado de Chocolate",Integer.parseInt(editHeladoChoco.getText().toString()),Double.parseDouble("2"));
-                añadirPostrePedido("Helado de Vainilla",Integer.parseInt(editVainilla.getText().toString()),Double.parseDouble("2"));
-                añadirPostrePedido("Helado de Yogurt",Integer.parseInt(editYogurt.getText().toString()),Double.parseDouble("2"));
-                añadirPostrePedido("Platano",Integer.parseInt(editPlatano.getText().toString()),Double.parseDouble("1.20"));
-                añadirPostrePedido("Piña",Integer.parseInt(editPina.getText().toString()),Double.parseDouble("1.60"));
-                añadirPostrePedido("Melón",Integer.parseInt(editMelon.getText().toString()),Double.parseDouble("1.60"));
+                añadirPostrePedido("Tarta de Chocolate",Integer.parseInt(editTartaChoco.getText().toString()),Float.parseFloat("3.25"));
+                añadirPostrePedido("Tarta de Hojaldre",Integer.parseInt(editHojaldre.getText().toString()),Float.parseFloat("3.25"));
+                añadirPostrePedido("Tarta de Manzana",Integer.parseInt(editManzana.getText().toString()),Float.parseFloat("3.50"));
+                añadirPostrePedido("Helado de Chocolate",Integer.parseInt(editHeladoChoco.getText().toString()),2);
+                añadirPostrePedido("Helado de Vainilla",Integer.parseInt(editVainilla.getText().toString()),2);
+                añadirPostrePedido("Helado de Yogurt",Integer.parseInt(editYogurt.getText().toString()),2);
+                añadirPostrePedido("Platano",Integer.parseInt(editPlatano.getText().toString()),Float.parseFloat("1.25"));
+                añadirPostrePedido("Piña",Integer.parseInt(editPina.getText().toString()),Float.parseFloat("1.50"));
+                añadirPostrePedido("Melón",Integer.parseInt(editMelon.getText().toString()),Float.parseFloat("1.50"));
 
                 Intent intent = new Intent(ElegirPostre.this, revisarPedido.class);
                 startActivity(intent);
@@ -102,7 +102,7 @@ public class ElegirPostre extends AppCompatActivity {
         });
     }
 
-    private void añadirPostrePedido(String s, int i, double v) {
+    private void añadirPostrePedido(String s, int i, float v) {
         Postre postre = new Postre(s, i, v);
         ((Pedido) this.getApplication()).anadirPostre(postre);
     }

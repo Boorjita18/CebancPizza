@@ -8,10 +8,10 @@ public class Postre {
 
         String nombre;
         int cantidad;
-        double precio;
+        Float precio;
 
 
-        public Postre(String nombre,int cantidad ,double precio){
+        public Postre(String nombre,int cantidad ,Float precio){
             this.nombre= nombre;
             this.cantidad=cantidad;
             this.precio=precio;
@@ -22,10 +22,10 @@ public class Postre {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public Double getPrecio() {
+    public Float getPrecio() {
         return precio;
     }
-    public void setPrecio(Double precio) {
+    public void setPrecio(Float precio) {
         this.precio = precio;
     }
     public int getCantidad() {

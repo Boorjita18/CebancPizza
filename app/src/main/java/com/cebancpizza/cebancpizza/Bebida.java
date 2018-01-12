@@ -8,9 +8,9 @@ public class Bebida {
 
     String nombre;
     int cantidad;
-    double precio;
+    float precio;
 
-    public Bebida(String nombre,int cantidad,double precio){
+    public Bebida(String nombre,int cantidad,float precio){
         this.nombre= nombre;
         this.cantidad=cantidad;
         this.precio=precio;
@@ -21,10 +21,10 @@ public class Bebida {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public Double getPrecio() {
+    public Float getPrecio() {
         return precio;
     }
-    public void setPrecio(Double precio) {
+    public void setPrecio(Float precio) {
         this.precio = precio;
     }
     public int getCantidad() {

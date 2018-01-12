@@ -108,5 +108,9 @@ public class Pedido extends android.app.Application {
     public ArrayList<Postre> getListaPostres(){
         return listaPostres;
     }
-
+    public void borrarPedido(){
+        listaPizzas.clear();
+        listaBebidas.clear();
+        listaPostres.clear();
+    }
 }

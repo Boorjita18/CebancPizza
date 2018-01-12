@@ -33,9 +33,10 @@
         <activity
             android:name=".opcionesPizza"
             android:label=" " />
-        <activity android:name=".revisarPedido"  android:label=" " >
-
-        </activity>
+        <activity
+            android:name=".revisarPedido"
+            android:label=" "></activity>
+        <activity android:name=".Finalizar" android:label=" "></activity>
     </application>
 
 </manifest>

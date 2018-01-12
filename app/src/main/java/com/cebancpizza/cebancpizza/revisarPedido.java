@@ -1,5 +1,6 @@
 package com.cebancpizza.cebancpizza;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,8 @@ import java.util.ArrayList;
 public class revisarPedido extends AppCompatActivity {
     TextView pedidoCompleto;
     TextView totalPedido;
-    double total =0;
+    Float total =Float.parseFloat("0.0");
+    String texto="";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_revisar_pedido);
@@ -23,7 +25,7 @@ public class revisarPedido extends AppCompatActivity {
          ArrayList<Pizza> listaPizzas= ((Pedido) this.getApplication()).getListaPizzas();
          ArrayList<Bebida> listaBebidas=((Pedido) this.getApplication()).getListaBebidas();
          ArrayList<Postre> listaPostres= ((Pedido) this.getApplication()).getListaPostres();
-         String texto="";
+
 
          for(Pizza pizza:listaPizzas){
             texto+="X"+pizza.getCantidad()+"-"+pizza.getNombre() +" " + pizza.getTamaño() +" "+ pizza.getTipoMasa()+ " " + pizza.getCantidad()*pizza.getPrecio()+"\n";
@@ -37,11 +39,18 @@ public class revisarPedido extends AppCompatActivity {
             texto+="X"+postre.getCantidad()+"-"+postre.getNombre()+" " + postre.getCantidad()*postre.getPrecio()+"\n";
             total+=postre.getCantidad()*postre.getPrecio();
         }
-        totalPedido.setText(Double.toString(total));
+        totalPedido.setText(Float.toString(total));
         pedidoCompleto.setText(texto);
     }
 
     public void volver(View v){
         finish();
+    }
+    public void finalizar(View v){
+
+        Intent intent = new Intent(this, Finalizar.class);
+        intent.putExtra("texto",texto);
+        intent .putExtra("total", totalPedido.getText().toString());
+        startActivity(intent);
     }
 }

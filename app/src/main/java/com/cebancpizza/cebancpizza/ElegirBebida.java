@@ -56,12 +56,12 @@ public class ElegirBebida extends AppCompatActivity {
                 if (editAgua.getText().toString().isEmpty()) {
                     editAgua.setText("0");
                 }
-                añadirBebidasPedido("Coca Cola",Integer.parseInt(editCocacola.getText().toString()),2.20);
-                añadirBebidasPedido("Limón",Integer.parseInt(editLimon.getText().toString()),2.20);
+                añadirBebidasPedido("Coca Cola",Integer.parseInt(editCocacola.getText().toString()),Float.parseFloat("2.25"));
+                añadirBebidasPedido("Limón",Integer.parseInt(editLimon.getText().toString()),Float.parseFloat("2.25"));
                 añadirBebidasPedido("Red Bull",Integer.parseInt(editRedbull.getText().toString()),3);
-                añadirBebidasPedido("Nestea",Integer.parseInt(editNestea.getText().toString()),2.1 );
-                añadirBebidasPedido("Cerveza",Integer.parseInt(editCerveza.getText().toString()),2.3 );
-                añadirBebidasPedido("Agua",Integer.parseInt(editAgua.getText().toString()),1.5 );
+                añadirBebidasPedido("Nestea",Integer.parseInt(editNestea.getText().toString()),Float.parseFloat("2.0") );
+                añadirBebidasPedido("Cerveza",Integer.parseInt(editCerveza.getText().toString()),Float.parseFloat("2.25") );
+                añadirBebidasPedido("Agua",Integer.parseInt(editAgua.getText().toString()),Float.parseFloat("1.5") );
                 Intent intent = new Intent(ElegirBebida.this, ElegirPostre.class);
                 startActivity(intent);
 
@@ -85,7 +85,7 @@ public class ElegirBebida extends AppCompatActivity {
 
     }
 
-    private void añadirBebidasPedido(String s, int i, double v) {
+    private void añadirBebidasPedido(String s, int i, float v) {
 
 
         Bebida bebida = new Bebida(s, i, v);

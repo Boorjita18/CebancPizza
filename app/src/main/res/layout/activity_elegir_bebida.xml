@@ -35,8 +35,6 @@
         android:text="@string/bebidas"
         style="@style/titulo"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
-
-        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

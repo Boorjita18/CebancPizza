@@ -8,11 +8,11 @@ public class Pizza {
     String nombre;
     String tipoMasa;
     String tamaño;
-    Double precio;
+    Float precio;
     int cantidad;
     public Pizza(){}
 
-    public Pizza(String nombre,String tipoMasa,String tamaño,Double precio,int cantidad){
+    public Pizza(String nombre,String tipoMasa,String tamaño,Float precio,int cantidad){
         this.nombre = nombre;
         this.tipoMasa = tipoMasa;
         this.tamaño = tamaño;
@@ -39,10 +39,10 @@ public class Pizza {
     public void setTamaño(String tamaño) {
         this.tamaño = tamaño;
     }
-    public Double getPrecio() {
+    public Float getPrecio() {
         return precio;
     }
-    public void setPrecio(Double precio) {
+    public void setPrecio(Float precio) {
         this.precio = precio;
     }
     public int getCantidad() {
