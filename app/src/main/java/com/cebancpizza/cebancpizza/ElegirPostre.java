@@ -18,6 +18,7 @@ public class ElegirPostre extends AppCompatActivity {
     EditText editMelon;
     Button btnSiguiente;
     Button btnVolver;
+    Button btnPedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,87 +36,37 @@ public class ElegirPostre extends AppCompatActivity {
         editMelon = (EditText) findViewById(R.id.editText11);
         btnSiguiente = (Button) findViewById(R.id.button7);
         btnVolver = (Button) findViewById(R.id.button5);
+        btnPedido =(Button) findViewById(R.id.button);
+
 
         btnSiguiente.setOnClickListener(new View.OnClickListener(){
-            int cantTartaChoco;
-            int cantHojaldre ;
-            int cantManzana ;
-            int cantHeladoChoco ;
-            int cantVainilla ;
-            int cantYogurt ;
-            int cantPlatano ;
-            int cantPina ;
-            int cantMelon ;
-            double precioTartaChoco;
-            double precioHojaldre;
-            double precioManzana;
-            double precioHeladoChoco;
-            double precioVainilla;
-            double precioYogurt;
-            double precioPlatano;
-            double precioPina;
-            double precioMelon;
-            double precioPostres;
-
-
             @Override
             public void onClick(View view) {
-                if (!editTartaChoco.getText().toString().equals("")) {
-                    cantTartaChoco= Integer.parseInt(editTartaChoco.getText().toString());
-                    precioTartaChoco = cantTartaChoco * 3.10;
-                } else
-                    precioTartaChoco = 0;
-
-                if (!editHojaldre.getText().toString().equals("")) {
-                    cantHojaldre = Integer.parseInt(editHojaldre.getText().toString());
-                    precioHojaldre = cantHojaldre*3.30;
-                } else
-                    precioHojaldre =0;
-
-                if (!editManzana.getText().toString().equals("")) {
-                    cantManzana = Integer.parseInt(editManzana.getText().toString());
-                    precioManzana = cantManzana*3.50;
-                } else
-                    precioManzana = 0;
-
-                if (!editHeladoChoco.getText().toString().equals("")) {
-                    cantHeladoChoco = Integer.parseInt(editHeladoChoco.getText().toString());
-                    precioHeladoChoco= cantHeladoChoco*2;
-                } else
-                    precioHeladoChoco= 0;
-
-                if (!editVainilla.getText().toString().equals("")) {
-                    cantVainilla= Integer.parseInt(editVainilla.getText().toString());
-                    precioVainilla= cantVainilla*2;
-                } else
-                    precioVainilla= 0;
-
-                if (!editYogurt.getText().toString().equals("")) {
-                    cantYogurt= Integer.parseInt(editYogurt.getText().toString());
-                    precioYogurt = cantYogurt*2;
-                } else
-                    precioYogurt = 0;
-
-                if (!editPlatano.getText().toString().equals("")) {
-                    cantPlatano= Integer.parseInt(editPlatano.getText().toString());
-                    precioPlatano= cantPlatano*1.20;
-                } else
-                    precioPlatano= 0;
-
-                if (!editPina.getText().toString().equals("")) {
-                    cantPina= Integer.parseInt(editPina.getText().toString());
-                    precioPina= cantPina*1.60;
-                } else
-                    precioPina= 0;
-
-                if (!editMelon.getText().toString().equals("")) {
-                    cantMelon= Integer.parseInt(editMelon.getText().toString());
-                    precioMelon= cantMelon*1.60;
-                } else
-                    precioMelon= 0;
-
-                precioPostres=precioTartaChoco+precioHojaldre+precioManzana+precioHeladoChoco+precioVainilla+precioYogurt+precioPlatano+precioPina+precioMelon;
+                añadirPostrePedido("Tarta de Chocolate",Integer.parseInt(editTartaChoco.getText().toString()),Double.parseDouble("3.10"));
+                añadirPostrePedido("Tarta de Hojaldre",Integer.parseInt(editHojaldre.getText().toString()),Double.parseDouble("3.30"));
+                añadirPostrePedido("Tarta de Manzana",Integer.parseInt(editManzana.getText().toString()),Double.parseDouble("3.50"));
+                añadirPostrePedido("Helado de Chocolate",Integer.parseInt(editHeladoChoco.getText().toString()),Double.parseDouble("2"));
+                añadirPostrePedido("Helado de Vainilla",Integer.parseInt(editVainilla.getText().toString()),Double.parseDouble("2"));
+                añadirPostrePedido("Helado de Yogurt",Integer.parseInt(editYogurt.getText().toString()),Double.parseDouble("2"));
+                añadirPostrePedido("Platano",Integer.parseInt(editPlatano.getText().toString()),Double.parseDouble("1.20"));
+                añadirPostrePedido("Piña",Integer.parseInt(editPina.getText().toString()),Double.parseDouble("1.60"));
+                añadirPostrePedido("Melón",Integer.parseInt(editMelon.getText().toString()),Double.parseDouble("1.60"));
             }
         });
+
+        btnPedido.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
+    private void añadirPostrePedido(String s, int i, double v) {
+        Postre postre = new Postre(s, i, v);
+        postre.setNombre(s);
+        postre.setCantidad(i);
+        postre.setPrecio(v);
+        ((Pedido) this.getApplication()).anadirPostre(postre);
     }
 }
