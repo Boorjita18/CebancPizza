@@ -1,6 +1,5 @@
 package com.cebancpizza.cebancpizza;
 
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,15 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class ElegirBebida extends AppCompatActivity {
-    EditText editCocacola;
-    EditText editLimon;
-    EditText editRedbull;
-    EditText editNestea;
-    EditText editCerveza;
-    EditText editAgua;
-    Button btnSiguiente;
-    Button btnVolver;
-    Button btnPedido;
+    EditText editCocacola, editLimon, editRedbull, editNestea, editCerveza, editAgua;
+    Button btnSiguiente, btnVolver, btnPedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,14 +56,13 @@ public class ElegirBebida extends AppCompatActivity {
                 añadirBebidasPedido("Agua",Integer.parseInt(editAgua.getText().toString()),Float.parseFloat("1.5") );
                 Intent intent = new Intent(ElegirBebida.this, ElegirPostre.class);
                 startActivity(intent);
-
             }
         });
 
-        btnPedido.setOnClickListener(new View.OnClickListener(){
+        btnPedido.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ElegirBebida.this, revisarPedido.class);
+                Intent intent = new Intent(ElegirBebida.this, RevisarPedido.class);
                 startActivity(intent);
             }
         });
@@ -86,14 +77,8 @@ public class ElegirBebida extends AppCompatActivity {
     }
 
     private void añadirBebidasPedido(String s, int i, float v) {
-
-
-//        Intent intent = new Intent(this, ElegirPizza.class);
-//
-//        startActivity(intent);
         Bebida bebida = new Bebida(s, i, v);
 
         ((Pedido) this.getApplication()).anadirBebida(bebida);
     }
-
 }

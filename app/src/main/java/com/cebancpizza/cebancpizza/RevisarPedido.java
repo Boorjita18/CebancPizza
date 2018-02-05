@@ -8,16 +8,15 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class revisarPedido extends AppCompatActivity {
-    TextView pedidoCompleto;
-    TextView totalPedido;
+public class RevisarPedido extends AppCompatActivity {
+    TextView pedidoCompleto, totalPedido;
     Float total =Float.parseFloat("0.0");
     String texto="";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_revisar_pedido);
-        pedidoCompleto   = (TextView)findViewById(R.id.resumenPedido);
-        totalPedido   = (TextView)findViewById(R.id.totalPedido);
+        pedidoCompleto = (TextView)findViewById(R.id.resumenPedido);
+        totalPedido = (TextView)findViewById(R.id.totalPedido);
         escribirResumen();
     }
 
@@ -26,21 +25,20 @@ public class revisarPedido extends AppCompatActivity {
          ArrayList<Bebida> listaBebidas=((Pedido) this.getApplication()).getListaBebidas();
          ArrayList<Postre> listaPostres= ((Pedido) this.getApplication()).getListaPostres();
 
-
          for(Pizza pizza:listaPizzas){
             texto+="X"+pizza.getCantidad()+"-"+pizza.getNombre() +" " + pizza.getTamaño() +" "+ pizza.getTipoMasa()+ " " + pizza.getCantidad()*pizza.getPrecio()+"\n";
             total+=pizza.getCantidad()*pizza.getPrecio();
-        }
-        for(Bebida bebida:listaBebidas){
-            texto+="X"+bebida.getCantidad()+"-"+bebida.getNombre()+" " + bebida.getCantidad()*bebida.getPrecio()+"\n";
-            total+=bebida.getCantidad()*bebida.getPrecio();
-        }
-        for(Postre postre:listaPostres){
-            texto+="X"+postre.getCantidad()+"-"+postre.getNombre()+" " + postre.getCantidad()*postre.getPrecio()+"\n";
-            total+=postre.getCantidad()*postre.getPrecio();
-        }
-        totalPedido.setText(Float.toString(total));
-        pedidoCompleto.setText(texto);
+         }
+         for(Bebida bebida:listaBebidas){
+             texto+="X"+bebida.getCantidad()+"-"+bebida.getNombre()+" " + bebida.getCantidad()*bebida.getPrecio()+"\n";
+             total+=bebida.getCantidad()*bebida.getPrecio();
+         }
+         for(Postre postre:listaPostres){
+             texto+="X"+postre.getCantidad()+"-"+postre.getNombre()+" " + postre.getCantidad()*postre.getPrecio()+"\n";
+             total+=postre.getCantidad()*postre.getPrecio();
+         }
+         totalPedido.setText(Float.toString(total));
+         pedidoCompleto.setText(texto);
     }
 
     public void volver(View v){

@@ -22,7 +22,7 @@
             android:name=".ElegirPizza"
             android:label=" " />
         <activity
-            android:name=".datosUsuario"
+            android:name=".DatosUsuario"
             android:label=" " />
         <activity
             android:name=".ElegirBebida"
@@ -31,10 +31,10 @@
             android:name=".ElegirPostre"
             android:label=" " />
         <activity
-            android:name=".opcionesPizza"
+            android:name=".OpcionesPizza"
             android:label=" " />
         <activity
-            android:name=".revisarPedido"
+            android:name=".RevisarPedido"
             android:label=" "></activity>
         <activity android:name=".Finalizar" android:label=" "></activity>
     </application>

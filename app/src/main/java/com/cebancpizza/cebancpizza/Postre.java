@@ -6,16 +6,15 @@ package com.cebancpizza.cebancpizza;
 
 public class Postre {
 
-        String nombre;
-        int cantidad;
-        Float precio;
+    String nombre;
+    int cantidad;
+    Float precio;
 
-
-        public Postre(String nombre,int cantidad ,Float precio){
-            this.nombre= nombre;
-            this.cantidad=cantidad;
-            this.precio=precio;
-        }
+    public Postre(String nombre,int cantidad ,Float precio){
+        this.nombre= nombre;
+        this.cantidad=cantidad;
+        this.precio=precio;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -34,5 +33,4 @@ public class Postre {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-
 }

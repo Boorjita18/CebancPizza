@@ -9,19 +9,14 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class opcionesPizza extends AppCompatActivity {
+public class OpcionesPizza extends AppCompatActivity {
 
     Intent intent;
-    TextView nombre;
-    TextView precio;
+    TextView nombre, precio;
     EditText cantidad;
-    RadioGroup rgMasa;
-    RadioGroup rgTamanno;
-    String masa="masa fina";
-    Float precioMasa= Float.parseFloat("0.0");
-    String tamanno="individual";
-    Float precioTamanno=Float.parseFloat("0.0");
-    Float precioUnitario;
+    RadioGroup rgMasa, rgTamanno;
+    String masa = "masa fina", tamanno = "individual";
+    Float precioMasa = Float.parseFloat("0.0"), precioTamanno = Float.parseFloat("0.0"), precioUnitario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +29,7 @@ public class opcionesPizza extends AppCompatActivity {
         cantidad = (EditText) findViewById(R.id.editText13);
         rgMasa = (RadioGroup) findViewById(R.id.radioGroup2);
         rgTamanno = (RadioGroup) findViewById(R.id.radioGroup3);
-        precioUnitario=Float.parseFloat(intent.getStringExtra("Precio"));
+        precioUnitario = Float.parseFloat(intent.getStringExtra("Precio"));
         nombre.setText(intent.getStringExtra("Nombre"));
         precio.setText(intent.getStringExtra("Precio"));
 
@@ -43,7 +38,7 @@ public class opcionesPizza extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (checkedId == R.id.radioButton) {
                     masa = "masa fina";
-                    precioMasa =Float.parseFloat("0.00");
+                    precioMasa = Float.parseFloat("0.00");
                 } else if (checkedId == R.id.radioButton2) {
                     masa = "masa normal";
                     precioMasa = Float.parseFloat("1.00");
@@ -97,7 +92,6 @@ public class opcionesPizza extends AppCompatActivity {
     }
 
     public void anadirPizzaPedido(View v){
-//        Pizza pizza = new Pizza(nombre.getText().toString(),"fina","individual",Double.parseDouble(precio.getText().toString()),1);
         Pizza pizza = new Pizza(nombre.getText().toString(),masa,tamanno,precioUnitario,Integer.parseInt(cantidad.getText().toString()));
         ((Pedido) this.getApplication()).anadirPizza(pizza);
         Intent intent = new Intent(this, ElegirPizza.class);

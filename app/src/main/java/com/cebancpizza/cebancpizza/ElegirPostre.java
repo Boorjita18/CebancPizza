@@ -8,18 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class ElegirPostre extends AppCompatActivity {
-    EditText editTartaChoco;
-    EditText editHojaldre;
-    EditText editManzana;
-    EditText editHeladoChoco;
-    EditText editVainilla;
-    EditText editYogurt;
-    EditText editPlatano;
-    EditText editPina;
-    EditText editMelon;
-    Button btnSiguiente;
-    Button btnVolver;
-    Button btnPedido;
+    EditText editTartaChoco, editHojaldre, editManzana, editHeladoChoco, editVainilla, editYogurt, editPlatano, editPina, editMelon;
+    Button btnSiguiente, btnVolver, btnPedido;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +28,6 @@ public class ElegirPostre extends AppCompatActivity {
         btnSiguiente = (Button) findViewById(R.id.button7);
         btnVolver = (Button) findViewById(R.id.button5);
         btnPedido =(Button) findViewById(R.id.button);
-
 
         btnSiguiente.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -81,7 +70,7 @@ public class ElegirPostre extends AppCompatActivity {
                 añadirPostrePedido("Piña",Integer.parseInt(editPina.getText().toString()),Float.parseFloat("1.50"));
                 añadirPostrePedido("Melón",Integer.parseInt(editMelon.getText().toString()),Float.parseFloat("1.50"));
 
-                Intent intent = new Intent(ElegirPostre.this, revisarPedido.class);
+                Intent intent = new Intent(ElegirPostre.this, RevisarPedido.class);
                 startActivity(intent);
             }
         });
@@ -89,7 +78,7 @@ public class ElegirPostre extends AppCompatActivity {
         btnPedido.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ElegirPostre.this, revisarPedido.class);
+                Intent intent = new Intent(ElegirPostre.this, RevisarPedido.class);
                 startActivity(intent);
             }
         });

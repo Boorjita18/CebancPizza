@@ -7,13 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class datosUsuario extends AppCompatActivity {
+public class DatosUsuario extends AppCompatActivity {
 
-    EditText nombreText;
-    EditText apellidosText;
-    EditText direccionText;
-    EditText telefonoText;
-    EditText emailText;
+    EditText nombreText, apellidosText, direccionText, telefonoText, emailText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +17,7 @@ public class datosUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_datos_usuario);
     }
 
-    public boolean comprobarUsuario(){
+    public boolean comprobarUsuario() {
         boolean errores = false;
         String erroresTexto = "";
         String nombre = "";
@@ -30,51 +26,48 @@ public class datosUsuario extends AppCompatActivity {
         String direccion = "";
         int telefono = 0;
 
-        nombreText   = (EditText)findViewById(R.id.nombreUsuario);
-        apellidosText   = (EditText)findViewById(R.id.apellidosUsuario);
-        direccionText   = (EditText)findViewById(R.id.direccionUsuario);
-        telefonoText   = (EditText)findViewById(R.id.telefonoUsuario);
-        emailText   = (EditText)findViewById(R.id.emailUsuario);
+        nombreText = (EditText)findViewById(R.id.nombreUsuario);
+        apellidosText = (EditText)findViewById(R.id.apellidosUsuario);
+        direccionText = (EditText)findViewById(R.id.direccionUsuario);
+        telefonoText = (EditText)findViewById(R.id.telefonoUsuario);
+        emailText = (EditText)findViewById(R.id.emailUsuario);
 
-        if (!nombreText.getText().toString().equals("")) {
+        if(!nombreText.getText().toString().equals("")) {
             nombre = nombreText.getText().toString();
-        }
-        else{
+        } else {
             errores = true;
-            erroresTexto+="El nombre es obligatorio\n";
+            erroresTexto += "El nombre es obligatorio\n";
         }
 
-        if (!apellidosText.getText().toString().equals("")) {
+        if(!apellidosText.getText().toString().equals("")) {
             apellidos = apellidosText.getText().toString();
-        }
-        else{
+        } else {
             errores = true;
-            erroresTexto+="El apellido es obligatorio\n";
+            erroresTexto += "El apellido es obligatorio\n";
         }
 
-        if (!direccionText.getText().toString().equals("")) {
+        if(!direccionText.getText().toString().equals("")) {
             direccion = direccionText.getText().toString();
-        }
-        else{
+        } else {
             errores = true;
-            erroresTexto+="La dirección es obligatoria\n";
+            erroresTexto += "La dirección es obligatoria\n";
         }
 
-        if (!telefonoText.getText().toString().equals("")) {
+        if(!telefonoText.getText().toString().equals("")) {
             telefono = Integer.parseInt(telefonoText.getText().toString());
-        }
-        else{
+        } else {
             errores = true;
-            erroresTexto+="El teléfono es obligatorio\n";
+            erroresTexto += "El teléfono es obligatorio\n";
         }
-        if (!emailText.getText().toString().equals("")) {
+
+        if(!emailText.getText().toString().equals("")) {
             email = emailText.getText().toString();
-        }
-        else{
+        } else {
             errores = true;
-            erroresTexto+="El Email es obligatorio\n";
+            erroresTexto += "El Email es obligatorio\n";
         }
-        if (!errores){
+
+        if (!errores) {
             Usuario u = new Usuario();
             u.setNombre(nombre);
             u.setApellidos(apellidos);
@@ -82,16 +75,15 @@ public class datosUsuario extends AppCompatActivity {
             u.setTelefono(telefono);
             u.setEmail(email);
             ((Pedido) this.getApplication()).setUsuairo(u);
-        }else{
-            Toast.makeText(this, erroresTexto,
-                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, erroresTexto, Toast.LENGTH_SHORT).show();
         }
 
         return errores;
     }
 
-    public void siguiente(View v){
-        if (!comprobarUsuario()) {
+    public void siguiente(View v) {
+        if(!comprobarUsuario()) {
             Intent intent = new Intent(this, ElegirPizza.class);
             startActivity(intent);
         }
@@ -99,5 +91,4 @@ public class datosUsuario extends AppCompatActivity {
     public void volver(View v){
         finish();
     }
-
 }
