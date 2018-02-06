@@ -19,7 +19,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL(SQL_DELETE_TABLA_PRODUCTO);
         db.execSQL(SQL_CREATE_TABLA_PRODUCTO);
           db.execSQL(SQL_CREATE_TABLA_USUARIO);
           db.execSQL(SQL_CREATE_TABLA_CABECERA_PEDIDO);
