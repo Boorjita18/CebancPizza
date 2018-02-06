@@ -1,6 +1,8 @@
 package com.cebancpizza.cebancpizza;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +27,13 @@ public class DatosUsuario extends AppCompatActivity {
         String email = "";
         String direccion = "";
         int telefono = 0;
+        FeedReaderDbHelper conexion=null;
+
+        try {
+            conexion = new FeedReaderDbHelper(getApplicationContext());
+        }catch (Exception e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 
         nombreText = (EditText)findViewById(R.id.nombreUsuario);
         apellidosText = (EditText)findViewById(R.id.apellidosUsuario);
@@ -68,6 +77,19 @@ public class DatosUsuario extends AppCompatActivity {
         }
 
         if (!errores) {
+            try {
+                SQLiteDatabase db = conexion.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put(TablasBBDD.TablaUsuario.COLUMN_NOMBRE, nombre);
+                values.put(TablasBBDD.TablaUsuario.COLUMN_APELLIDOS, apellidos);
+                values.put(TablasBBDD.TablaUsuario.COLUMN_DIRECCION, direccion);
+                values.put(TablasBBDD.TablaUsuario.COLUMN_TELEFONO, telefono);
+                values.put(TablasBBDD.TablaUsuario.COLUMN_EMAIL, email);
+
+                long nuevaLinea = db.insert(TablasBBDD.TablaUsuario.TABLE_NAME, null, values);
+            }catch (Exception e){
+                Toast.makeText(this,"err insertar" +e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
             Usuario u = new Usuario();
             u.setNombre(nombre);
             u.setApellidos(apellidos);
