@@ -20,11 +20,13 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {
 
+        db.execSQL(SQL_CREATE_TABLA_PRODUCTO);
           db.execSQL(SQL_CREATE_TABLA_USUARIO);
           db.execSQL(SQL_CREATE_TABLA_CABECERA_PEDIDO);
           db.execSQL(SQL_CREATE_TABLA_LINEA_PEDIDO);
         db.execSQL(SQL_DATOS_PIZZAS);
         db.execSQL(SQL_DATOS_COMPLEMENTO);
+
       }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -32,8 +34,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             db.execSQL(SQL_DELETE_TABLA_USUARIO);
             db.execSQL(SQL_DELETE_TABLA_CABECERA_PEDIDO);
             db.execSQL(SQL_DELETE_TABLA_LINEA_PEDIDO);
-            db.execSQL(SQL_DATOS_PIZZAS);
-            db.execSQL(SQL_DATOS_COMPLEMENTO);
+            db.execSQL(SQL_DELETE_TABLA_PRODUCTO);
             onCreate(db);
         }
     }
