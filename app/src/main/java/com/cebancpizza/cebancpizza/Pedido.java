@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class Pedido extends android.app.Application {
 
     private Usuario usuario;
-    private ArrayList<Pizza> listaPizzas= new ArrayList<Pizza>();
-    private ArrayList<Bebida> listaBebidas= new ArrayList<Bebida>();
-    private ArrayList<Postre> listaPostres= new ArrayList<Postre>();
+    private ArrayList<Pizza> listaPizzas = new ArrayList<Pizza>();
+    private ArrayList<Bebida> listaBebidas = new ArrayList<Bebida>();
+    private ArrayList<Postre> listaPostres = new ArrayList<Postre>();
 
     public void comprobarPizza(Pizza p){
         boolean modificado = false;
@@ -28,19 +28,16 @@ public class Pedido extends android.app.Application {
         }
         if (!modificado){
             listaPizzas.add(p);
-            Toast.makeText(this, "añadida nueva pizza "+ p.getNombre(),
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "añadida nueva pizza " + p.getNombre(), Toast.LENGTH_SHORT).show();
         }
     }
-
 
     public void anadirPizza(Pizza p){
         if (listaPizzas.size()>0) {
             comprobarPizza(p);
         }else{
             listaPizzas.add(p);
-            Toast.makeText(this, "añadida nueva pizza "+ p.getNombre(),
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "añadida nueva pizza "+ p.getNombre(), Toast.LENGTH_SHORT).show();
         }
     }
 

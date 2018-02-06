@@ -5,11 +5,8 @@ package com.cebancpizza.cebancpizza;
  */
 
 public class Usuario {
-    String nombre;
-    String apellidos;
+    String nombre, apellidos, direccion, email;
     int telefono;
-    String direccion;
-    String email;
 
     public String getNombre() {
         return nombre;
@@ -41,5 +38,4 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-
 }

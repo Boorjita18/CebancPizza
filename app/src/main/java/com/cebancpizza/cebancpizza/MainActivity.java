@@ -11,13 +11,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
-
     public void pedirCliente(View v){
-        Intent intent= new Intent(this, datosUsuario.class);
+        Intent intent = new Intent(this, DatosUsuario.class);
         startActivity(intent);
-
     }
 }

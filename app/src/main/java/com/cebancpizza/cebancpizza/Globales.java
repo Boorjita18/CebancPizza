@@ -17,5 +17,4 @@ public class Globales extends android.app.Application {
     public Usuario getUsuario(){
         return usuario;
     }
-
 }

@@ -5,9 +5,7 @@ package com.cebancpizza.cebancpizza;
  */
 
 public class Pizza {
-    String nombre;
-    String tipoMasa;
-    String tamaño;
+    String nombre, tipoMasa, tamaño;
     Float precio;
     int cantidad;
     public Pizza(){}
@@ -19,7 +17,6 @@ public class Pizza {
         this.precio = precio;
         this.cantidad = cantidad;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -54,5 +51,4 @@ public class Pizza {
     public void anadirCantidad(int cantidad){
         this.cantidad+=cantidad;
     }
-
 }
