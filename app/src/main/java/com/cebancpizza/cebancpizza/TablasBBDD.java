@@ -40,7 +40,7 @@ public final class TablasBBDD {
     // TABLA PRODUCTO
     public static class TablaProducto implements BaseColumns {
         public static final String TABLE_NAME = "producto";
-        public static final String COLUMN_ID = "proucto_id";
+        public static final String COLUMN_ID = "producto_id";
         public static final String COLUMN_NOMBRE = "producto_nombre";
         public static final String COLUMN_TIPO_PRODUCTO = "producto_tipo";
         public static final String COLUMN_TIPO_MASA = "producto_tipo_masa";
