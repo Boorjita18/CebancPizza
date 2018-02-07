@@ -2,6 +2,7 @@ package com.cebancpizza.cebancpizza;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,11 +13,18 @@ import android.widget.Toast;
 public class DatosUsuario extends AppCompatActivity {
 
     EditText nombreText, apellidosText, direccionText, telefonoText, emailText;
+    FeedReaderDbHelper conexion = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
+
+        try {
+            conexion = new FeedReaderDbHelper(getApplicationContext());
+        }catch (Exception e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
     }
 
     public boolean comprobarUsuario() {
@@ -27,13 +35,6 @@ public class DatosUsuario extends AppCompatActivity {
         String email = "";
         String direccion = "";
         int telefono = 0;
-        FeedReaderDbHelper conexion=null;
-
-        try {
-            conexion = new FeedReaderDbHelper(getApplicationContext());
-        }catch (Exception e){
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
 
         nombreText = (EditText)findViewById(R.id.nombreUsuario);
         apellidosText = (EditText)findViewById(R.id.apellidosUsuario);
@@ -112,5 +113,46 @@ public class DatosUsuario extends AppCompatActivity {
     }
     public void volver(View v){
         finish();
+    }
+
+    public void buscar(View v) {
+        SQLiteDatabase db = conexion.getReadableDatabase();
+
+        String[] projection = {
+                TablasBBDD.TablaUsuario.COLUMN_ID,
+                TablasBBDD.TablaUsuario.COLUMN_NOMBRE,
+                TablasBBDD.TablaUsuario.COLUMN_APELLIDOS,
+                TablasBBDD.TablaUsuario.COLUMN_TELEFONO,
+                TablasBBDD.TablaUsuario.COLUMN_DIRECCION,
+                TablasBBDD.TablaUsuario.COLUMN_EMAIL
+        };
+
+        String selection = TablasBBDD.TablaUsuario.COLUMN_NOMBRE + " = ?";
+        //String[] selectionArgs = { nombreText.getText().toString() };
+        String[] selectionArgs = { "A" };
+
+        Cursor cursor = db.query(
+                TablasBBDD.TablaUsuario.TABLE_NAME,       // The table to query
+                projection,                               // The columns to return
+                selection,                                // The columns for the WHERE clause
+                selectionArgs,                            // The values for the WHERE clause
+                null,                                     // don't group the rows
+                null,                                     // don't filter by row groups
+                null                                      // The sort order
+        );
+
+        while(cursor.moveToNext()) {Usuario u = new Usuario();
+            u.setNombre(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_NOMBRE)));
+            u.setApellidos(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_APELLIDOS)));
+            u.setDireccion(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_DIRECCION)));
+            u.setTelefono(cursor.getInt(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_TELEFONO)));
+            u.setEmail(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_EMAIL)));
+            ((Pedido) this.getApplication()).setUsuairo(u);
+
+            Toast.makeText(this, "Apellido: " + u.getApellidos(), Toast.LENGTH_SHORT).show();
+
+            //apellidosText.setText(u.getApellidos());
+        }
+        cursor.close();
     }
 }
