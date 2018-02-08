@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
     // Poner en la versión 1 para reiniciar la base de datos
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 3;
     public static final String DATABASE_NAME = "PizzeriaCebanc.db";
 
     public FeedReaderDbHelper(Context context) {
@@ -31,7 +31,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (newVersion == 1) {
+        if (oldVersion < newVersion) {
             db.execSQL(SQL_DELETE_TABLA_USUARIO);
             db.execSQL(SQL_DELETE_TABLA_CABECERA_PEDIDO);
             db.execSQL(SQL_DELETE_TABLA_LINEA_PEDIDO);
@@ -197,5 +197,6 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     "VALUES " +
                         "('gmaniega','Gorka','Maniega','987654321','Dirección de Gorka','gmaiega@email.com'), " +
                         "('etoledo','Eneko','Toledo','654321987','Dirección de Eneko','etoledo@email.com'), " +
+                        "('a','a','a','1','Dirección de a','a@email.com'), " +
                         "('aetxezarreta','Aitor','Etxezarreta','321987654','Dirección de Aitor','aetxezarreta@email.com') ";
 }
