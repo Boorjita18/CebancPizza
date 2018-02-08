@@ -20,6 +20,12 @@ public class DatosUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
 
+        nombreText = (EditText)findViewById(R.id.nombreUsuario);
+        apellidosText = (EditText)findViewById(R.id.apellidosUsuario);
+        direccionText = (EditText)findViewById(R.id.direccionUsuario);
+        telefonoText = (EditText)findViewById(R.id.telefonoUsuario);
+        emailText = (EditText)findViewById(R.id.emailUsuario);
+
         try {
             conexion = new FeedReaderDbHelper(getApplicationContext());
         }catch (Exception e){
@@ -35,12 +41,6 @@ public class DatosUsuario extends AppCompatActivity {
         String email = "";
         String direccion = "";
         int telefono = 0;
-
-        nombreText = (EditText)findViewById(R.id.nombreUsuario);
-        apellidosText = (EditText)findViewById(R.id.apellidosUsuario);
-        direccionText = (EditText)findViewById(R.id.direccionUsuario);
-        telefonoText = (EditText)findViewById(R.id.telefonoUsuario);
-        emailText = (EditText)findViewById(R.id.emailUsuario);
 
         if(!nombreText.getText().toString().equals("")) {
             nombre = nombreText.getText().toString();
@@ -128,8 +128,8 @@ public class DatosUsuario extends AppCompatActivity {
         };
 
         String selection = TablasBBDD.TablaUsuario.COLUMN_NOMBRE + " = ?";
-        //String[] selectionArgs = { nombreText.getText().toString() };
-        String[] selectionArgs = { "A" };
+        String[] selectionArgs = { nombreText.getText().toString() };
+        //String[] selectionArgs = { "A" };
 
         Cursor cursor = db.query(
                 TablasBBDD.TablaUsuario.TABLE_NAME,       // The table to query
@@ -151,7 +151,7 @@ public class DatosUsuario extends AppCompatActivity {
 
             Toast.makeText(this, "Apellido: " + u.getApellidos(), Toast.LENGTH_SHORT).show();
 
-            //apellidosText.setText(u.getApellidos());
+            apellidosText.setText(u.getApellidos());
         }
         cursor.close();
     }

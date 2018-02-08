@@ -28,7 +28,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion != newVersion) {
+        if (newVersion == 0) {
             db.execSQL(SQL_DELETE_TABLA_USUARIO);
             db.execSQL(SQL_DELETE_TABLA_CABECERA_PEDIDO);
             db.execSQL(SQL_DELETE_TABLA_LINEA_PEDIDO);
