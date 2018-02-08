@@ -152,22 +152,22 @@ public class DatosUsuario extends AppCompatActivity {
                 null                                      // The sort order
         );
 
-        while(cursor.moveToNext()) {
-            Usuario u = new Usuario();
-            u.setUsuario(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_USUARIO)));
-            u.setNombre(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_NOMBRE)));
-            u.setApellidos(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_APELLIDOS)));
-            u.setDireccion(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_DIRECCION)));
-            u.setTelefono(cursor.getInt(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_TELEFONO)));
-            u.setEmail(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_EMAIL)));
-            ((Pedido) this.getApplication()).setUsuairo(u);
+            while(cursor.moveToNext()) {
+                Usuario u = new Usuario();
+                u.setUsuario(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_USUARIO)));
+                u.setNombre(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_NOMBRE)));
+                u.setApellidos(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_APELLIDOS)));
+                u.setDireccion(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_DIRECCION)));
+                u.setTelefono(cursor.getInt(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_TELEFONO)));
+                u.setEmail(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_EMAIL)));
+                ((Pedido) this.getApplication()).setUsuairo(u);
 
-            nombreText.setText(u.getNombre());
-            apellidosText.setText(u.getApellidos());
-            direccionText.setText(u.getDireccion());
-            telefonoText.setText(String.valueOf(u.getTelefono()));
-            emailText.setText(u.getEmail());
-        }
+                nombreText.setText(u.getNombre());
+                apellidosText.setText(u.getApellidos());
+                direccionText.setText(u.getDireccion());
+                telefonoText.setText(String.valueOf(u.getTelefono()));
+                emailText.setText(u.getEmail());
+            }
         cursor.close();
     }
 }

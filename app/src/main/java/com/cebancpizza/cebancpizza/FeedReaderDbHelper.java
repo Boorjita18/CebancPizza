@@ -96,76 +96,90 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
     // INSERTAR PRODUCTOS
     private static final String SQL_INSERT_PIZZAS =
-            "INSERT INTO "+TablasBBDD.TablaProducto.TABLE_NAME+" ("+TablasBBDD.TablaProducto.COLUMN_NOMBRE+","+TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO +","+TablasBBDD.TablaProducto.COLUMN_TIPO_MASA +","+TablasBBDD.TablaProducto.COLUMN_TAMANNO +","+TablasBBDD.TablaProducto.COLUMN_PRECIO+") VALUES " +
-                    "('Barbacoa','Pizza','Masa fina','Individual',5), " +
-                    "('Barbacoa','Pizza','Masa normal','Individual',6), " +
-                    "('Barbacoa','Pizza','Masa fina','Mediana',7), " +
-                    "('Barbacoa','Pizza','Masa normal','Mediana',8), " +
-                    "('Barbacoa','Pizza','Masa fina','Familiar',9), " +
-                    "('Barbacoa','Pizza','Masa normal','Familiar',10), " +
-                    "('Campiña','Pizza','Masa fina','Individual',6), " +
-                    "('Campiña','Pizza','Masa normal','Individual',7), " +
-                    "('Campiña','Pizza','Masa fina','Mediana',8), " +
-                    "('Campiña','Pizza','Masa normal','Mediana',9), " +
-                    "('Campiña','Pizza','Masa fina','Familiar',10), " +
-                    "('Campiña','Pizza','Masa normal','Familiar',11), " +
-                    "('Gourmet','Pizza','Masa fina','Individual',7.5), " +
-                    "('Gourmet','Pizza','Masa normal','Individual',8.5), " +
-                    "('Gourmet','Pizza','Masa fina','Mediana',9.5), " +
-                    "('Gourmet','Pizza','Masa normal','Mediana',10.5), " +
-                    "('Gourmet','Pizza','Masa fina','Familiar',11.5), " +
-                    "('Gourmet','Pizza','Masa normal','Familiar',12.5), " +
-                    "('Hawaiana','Pizza','Masa fina','Individual',6), " +
-                    "('Hawaiana','Pizza','Masa normal','Individual',7),  " +
-                    "('Hawaiana','Pizza','Masa fina','Mediana',8), " +
-                    "('Hawaiana','Pizza','Masa normal','Mediana',9), " +
-                    "('Hawaiana','Pizza','Masa fina','Familiar',10), " +
-                    "('Hawaiana','Pizza','Masa normal','Familiar',11), " +
-                    "('Jamon y Queso','Pizza','Masa fina','Individual',5), " +
-                    "('Jamon y Queso','Pizza','Masa normal','Individual',6), " +
-                    "('Jamon y Queso','Pizza','Masa fina','Mediana',7), " +
-                    "('Jamon y Queso','Pizza','Masa normal','Mediana',8), " +
-                    "('Jamon y Queso','Pizza','Masa fina','Familiar',9), " +
-                    "('Jamon y Queso','Pizza','Masa normal','Familiar',10), " +
-                    "('Sin Gluten','Pizza','Masa fina','Individual',6), " +
-                    "('Sin Gluten','Pizza','Masa normal','Individual',7), " +
-                    "('Sin Gluten','Pizza','Masa fina','Mediana',8), " +
-                    "('Sin Gluten','Pizza','Masa normal','Mediana',9), " +
-                    "('Sin GLuten','Pizza','Masa fina','Familiar',10), " +
-                    "('Sin Gluten','Pizza','Masa normal','Familiar',11), " +
-                    "('Pepperoni','Pizza','Masa fina','Individual',7), " +
-                    "('Pepperoni','Pizza','Masa normal','Individual',8), " +
-                    "('Pepperoni','Pizza','Masa fina','Mediana',9), " +
-                    "('Pepperoni','Pizza','Masa normal','Mediana',10), " +
-                    "('Pepperoni','Pizza','Masa fina','Familiar',11), " +
-                    "('Pepperoni','Pizza','Masa normal','Familiar',12), " +
-                    "('Pulled Beef','Pizza','Masa fina','Individual',7.5), " +
-                    "('Pulled Beef','Pizza','Masa normal','Individual',8.5), " +
-                    "('Pulled Beef','Pizza','Masa fina','Mediana',9.5), " +
-                    "('Pulled Beef','Pizza','Masa normal','Mediana',10.5), " +
-                    "('Pulled Beef','Pizza','Masa fina','Familiar',11.5), " +
-                    "('Pulled Beef','Pizza','Masa normal','Familiar',12.5)";
+            "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +
+                    TablasBBDD.TablaProducto.COLUMN_NOMBRE + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_TIPO_MASA + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_TAMANNO + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ") " +
+                    "VALUES " +
+                        "('Barbacoa','Pizza','Masa fina','Individual',5), " +
+                        "('Barbacoa','Pizza','Masa normal','Individual',6), " +
+                        "('Barbacoa','Pizza','Masa fina','Mediana',7), " +
+                        "('Barbacoa','Pizza','Masa normal','Mediana',8), " +
+                        "('Barbacoa','Pizza','Masa fina','Familiar',9), " +
+                        "('Barbacoa','Pizza','Masa normal','Familiar',10), " +
+                        "('Campiña','Pizza','Masa fina','Individual',6), " +
+                        "('Campiña','Pizza','Masa normal','Individual',7), " +
+                        "('Campiña','Pizza','Masa fina','Mediana',8), " +
+                        "('Campiña','Pizza','Masa normal','Mediana',9), " +
+                        "('Campiña','Pizza','Masa fina','Familiar',10), " +
+                        "('Campiña','Pizza','Masa normal','Familiar',11), " +
+                        "('Gourmet','Pizza','Masa fina','Individual',7.5), " +
+                        "('Gourmet','Pizza','Masa normal','Individual',8.5), " +
+                        "('Gourmet','Pizza','Masa fina','Mediana',9.5), " +
+                        "('Gourmet','Pizza','Masa normal','Mediana',10.5), " +
+                        "('Gourmet','Pizza','Masa fina','Familiar',11.5), " +
+                        "('Gourmet','Pizza','Masa normal','Familiar',12.5), " +
+                        "('Hawaiana','Pizza','Masa fina','Individual',6), " +
+                        "('Hawaiana','Pizza','Masa normal','Individual',7),  " +
+                        "('Hawaiana','Pizza','Masa fina','Mediana',8), " +
+                        "('Hawaiana','Pizza','Masa normal','Mediana',9), " +
+                        "('Hawaiana','Pizza','Masa fina','Familiar',10), " +
+                        "('Hawaiana','Pizza','Masa normal','Familiar',11), " +
+                        "('Jamón y Queso','Pizza','Masa fina','Individual',5), " +
+                        "('Jamón y Queso','Pizza','Masa normal','Individual',6), " +
+                        "('Jamón y Queso','Pizza','Masa fina','Mediana',7), " +
+                        "('Jamón y Queso','Pizza','Masa normal','Mediana',8), " +
+                        "('Jamón y Queso','Pizza','Masa fina','Familiar',9), " +
+                        "('Jamón y Queso','Pizza','Masa normal','Familiar',10), " +
+                        "('Sin Gluten','Pizza','Masa fina','Individual',6), " +
+                        "('Sin Gluten','Pizza','Masa normal','Individual',7), " +
+                        "('Sin Gluten','Pizza','Masa fina','Mediana',8), " +
+                        "('Sin Gluten','Pizza','Masa normal','Mediana',9), " +
+                        "('Sin GLuten','Pizza','Masa fina','Familiar',10), " +
+                        "('Sin Gluten','Pizza','Masa normal','Familiar',11), " +
+                        "('Pepperoni','Pizza','Masa fina','Individual',7), " +
+                        "('Pepperoni','Pizza','Masa normal','Individual',8), " +
+                        "('Pepperoni','Pizza','Masa fina','Mediana',9), " +
+                        "('Pepperoni','Pizza','Masa normal','Mediana',10), " +
+                        "('Pepperoni','Pizza','Masa fina','Familiar',11), " +
+                        "('Pepperoni','Pizza','Masa normal','Familiar',12), " +
+                        "('Pulled Beef','Pizza','Masa fina','Individual',7.5), " +
+                        "('Pulled Beef','Pizza','Masa normal','Individual',8.5), " +
+                        "('Pulled Beef','Pizza','Masa fina','Mediana',9.5), " +
+                        "('Pulled Beef','Pizza','Masa normal','Mediana',10.5), " +
+                        "('Pulled Beef','Pizza','Masa fina','Familiar',11.5), " +
+                        "('Pulled Beef','Pizza','Masa normal','Familiar',12.5)";
 
     private static final String SQL_INSERT_BEBIDAS =
-            "INSERT INTO "+TablasBBDD.TablaProducto.TABLE_NAME+" ("+TablasBBDD.TablaProducto.COLUMN_NOMBRE +","+TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO +","+TablasBBDD.TablaProducto.COLUMN_PRECIO+") VALUES " +
-                    "('Coca Cola','Bebida',2.25), " +
-                    "('Limon','Bebida',2.25), " +
-                    "('Red Bull','Bebida',3), " +
-                    "('Nestea','Bebida',2), " +
-                    "('Cerveza','Bebida',2.25), " +
-                    "('Agua','Bebida',1.5)";
+            "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +
+                    TablasBBDD.TablaProducto.COLUMN_NOMBRE + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ") " +
+                    "VALUES " +
+                        "('Coca Cola','Bebida',2.25), " +
+                        "('Limon','Bebida',2.25), " +
+                        "('Red Bull','Bebida',3), " +
+                        "('Nestea','Bebida',2), " +
+                        "('Cerveza','Bebida',2.25), " +
+                        "('Agua','Bebida',1.5)";
 
     private static final String SQL_INSERT_POSTRES =
-            "INSERT INTO "+TablasBBDD.TablaProducto.TABLE_NAME+" ("+TablasBBDD.TablaProducto.COLUMN_NOMBRE +","+TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO +","+TablasBBDD.TablaProducto.COLUMN_PRECIO+") VALUES " +
-                    "('Chocolate','Tarta',3.25), " +
-                    "('Hojaldre','Tarta',3.25), " +
-                    "('Manzana','Tarta',3.5), " +
-                    "('Chocolate','Helado',2), " +
-                    "('Vainilla','Helado',2), " +
-                    "('Yogurt','Helado',2), " +
-                    "('Platano','Fruta',1.25), " +
-                    "('Piña','Fruta',1.5), " +
-                    "('Melón','Fruta',1.5)";
+            "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +
+                    TablasBBDD.TablaProducto.COLUMN_NOMBRE + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ") " +
+                    "VALUES " +
+                        "('Chocolate','Tarta',3.25), " +
+                        "('Hojaldre','Tarta',3.25), " +
+                        "('Manzana','Tarta',3.5), " +
+                        "('Chocolate','Helado',2), " +
+                        "('Vainilla','Helado',2), " +
+                        "('Yogurt','Helado',2), " +
+                        "('Platano','Fruta',1.25), " +
+                        "('Piña','Fruta',1.5), " +
+                        "('Melón','Fruta',1.5)";
 
     //DATOS DE PRUEBA
     private static final String SQL_INSERT_USUARIOS_PRUEBA =
