@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
+    // Poner en la versión 1 para reiniciar la base de datos
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "PizzeriaCebanc.db";
 
@@ -25,7 +26,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_INSERT_PIZZAS);
         db.execSQL(SQL_INSERT_BEBIDAS);
         db.execSQL(SQL_INSERT_POSTRES);
-        // Datos de prueba
+        // DATOS DE PRUEBA
         db.execSQL(SQL_INSERT_USUARIOS_PRUEBA);
     }
 
@@ -57,13 +58,14 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_TABLA_USUARIO =
             "DROP TABLE IF EXISTS " + TablasBBDD.TablaUsuario.TABLE_NAME;
 
-    // TABLA CAECERA PEDIDO
+    // TABLA CABECERA PEDIDO
     private static final String SQL_CREATE_TABLA_CABECERA_PEDIDO =
             "CREATE TABLE " + TablasBBDD.TablaCabeceraPedido.TABLE_NAME + " (" +
                     TablasBBDD.TablaCabeceraPedido.COLUMN_ID + " INTEGER PRIMARY KEY," +
                     TablasBBDD.TablaCabeceraPedido.COLUMN_ID_USUARIO + " INTEGER," +
                     TablasBBDD.TablaCabeceraPedido.COLUMN_FECHA + " NUMERIC, " +
-                    "FOREIGN KEY (" + TablasBBDD.TablaCabeceraPedido.COLUMN_ID_USUARIO + ") REFERENCES " + TablasBBDD.TablaUsuario.TABLE_NAME + "(" + TablasBBDD.TablaUsuario.COLUMN_ID + "))";
+                    "FOREIGN KEY (" + TablasBBDD.TablaCabeceraPedido.COLUMN_ID_USUARIO + ") "+
+                        "REFERENCES " + TablasBBDD.TablaUsuario.TABLE_NAME + "(" + TablasBBDD.TablaUsuario.COLUMN_ID + "))";
 
     private static final String SQL_DELETE_TABLA_CABECERA_PEDIDO =
             "DROP TABLE IF EXISTS " + TablasBBDD.TablaCabeceraPedido.TABLE_NAME;
@@ -75,8 +77,10 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     TablasBBDD.TablaLineaPedido.COLUMN_ID_CABECERA_PEDIDO + " INTEGER," +
                     TablasBBDD.TablaLineaPedido.COLUMN_ID_PRODUCTO + " INTEGER," +
                     TablasBBDD.TablaLineaPedido.COLUMN_CANTIDAD + " INTEGER," +
-                    "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_CABECERA_PEDIDO + ") REFERENCES " + TablasBBDD.TablaCabeceraPedido.TABLE_NAME + "(" + TablasBBDD.TablaCabeceraPedido.COLUMN_ID + "), " +
-                    "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_PRODUCTO + ") REFERENCES " + TablasBBDD.TablaProducto.TABLE_NAME + "(" + TablasBBDD.TablaProducto.COLUMN_ID + "))";
+                    "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_CABECERA_PEDIDO + ") " +
+                        "REFERENCES " + TablasBBDD.TablaCabeceraPedido.TABLE_NAME + "(" + TablasBBDD.TablaCabeceraPedido.COLUMN_ID + "), " +
+                    "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_PRODUCTO + ") " +
+                        "REFERENCES " + TablasBBDD.TablaProducto.TABLE_NAME + "(" + TablasBBDD.TablaProducto.COLUMN_ID + "))";
 
     private static final String SQL_DELETE_TABLA_LINEA_PEDIDO =
             "DROP TABLE IF EXISTS " + TablasBBDD.TablaLineaPedido.TABLE_NAME;
@@ -181,7 +185,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                         "('Piña','Fruta',1.5), " +
                         "('Melón','Fruta',1.5)";
 
-    //DATOS DE PRUEBA
+    //INSERTAR DATOS DE PRUEBA
     private static final String SQL_INSERT_USUARIOS_PRUEBA =
             "INSERT INTO " + TablasBBDD.TablaUsuario.TABLE_NAME + " (" +
                     TablasBBDD.TablaUsuario.COLUMN_USUARIO + ", " +
