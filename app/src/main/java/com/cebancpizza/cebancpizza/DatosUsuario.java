@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class DatosUsuario extends AppCompatActivity {
 
-    EditText nombreText, apellidosText, direccionText, telefonoText, emailText;
+    EditText usuarioText, nombreText, apellidosText, direccionText, telefonoText, emailText;
     FeedReaderDbHelper conexion = null;
 
     @Override
@@ -20,6 +20,7 @@ public class DatosUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_datos_usuario);
 
+        usuarioText = (EditText)findViewById(R.id.usuarioUsuario);
         nombreText = (EditText)findViewById(R.id.nombreUsuario);
         apellidosText = (EditText)findViewById(R.id.apellidosUsuario);
         direccionText = (EditText)findViewById(R.id.direccionUsuario);
@@ -36,11 +37,19 @@ public class DatosUsuario extends AppCompatActivity {
     public boolean comprobarUsuario() {
         boolean errores = false;
         String erroresTexto = "";
+        String usuario = "";
         String nombre = "";
         String apellidos = "";
         String email = "";
         String direccion = "";
         int telefono = 0;
+
+        if(!usuarioText.getText().toString().equals("")) {
+            usuario = usuarioText.getText().toString();
+        } else {
+            errores = true;
+            erroresTexto += "El usuario es obligatorio\n";
+        }
 
         if(!nombreText.getText().toString().equals("")) {
             nombre = nombreText.getText().toString();
@@ -81,6 +90,7 @@ public class DatosUsuario extends AppCompatActivity {
             try {
                 SQLiteDatabase db = conexion.getWritableDatabase();
                 ContentValues values = new ContentValues();
+                values.put(TablasBBDD.TablaUsuario.COLUMN_USUARIO, usuario);
                 values.put(TablasBBDD.TablaUsuario.COLUMN_NOMBRE, nombre);
                 values.put(TablasBBDD.TablaUsuario.COLUMN_APELLIDOS, apellidos);
                 values.put(TablasBBDD.TablaUsuario.COLUMN_DIRECCION, direccion);
@@ -92,6 +102,7 @@ public class DatosUsuario extends AppCompatActivity {
                 Toast.makeText(this,"err insertar" +e.getMessage(), Toast.LENGTH_SHORT).show();
             }
             Usuario u = new Usuario();
+            u.setUsuario(usuario);
             u.setNombre(nombre);
             u.setApellidos(apellidos);
             u.setDireccion(direccion);
@@ -120,6 +131,7 @@ public class DatosUsuario extends AppCompatActivity {
 
         String[] projection = {
                 TablasBBDD.TablaUsuario.COLUMN_ID,
+                TablasBBDD.TablaUsuario.COLUMN_USUARIO,
                 TablasBBDD.TablaUsuario.COLUMN_NOMBRE,
                 TablasBBDD.TablaUsuario.COLUMN_APELLIDOS,
                 TablasBBDD.TablaUsuario.COLUMN_TELEFONO,
@@ -127,9 +139,8 @@ public class DatosUsuario extends AppCompatActivity {
                 TablasBBDD.TablaUsuario.COLUMN_EMAIL
         };
 
-        String selection = TablasBBDD.TablaUsuario.COLUMN_NOMBRE + " = ?";
-        String[] selectionArgs = { nombreText.getText().toString() };
-        //String[] selectionArgs = { "A" };
+        String selection = TablasBBDD.TablaUsuario.COLUMN_USUARIO + " = ?";
+        String[] selectionArgs = { usuarioText.getText().toString() };
 
         Cursor cursor = db.query(
                 TablasBBDD.TablaUsuario.TABLE_NAME,       // The table to query
@@ -141,7 +152,9 @@ public class DatosUsuario extends AppCompatActivity {
                 null                                      // The sort order
         );
 
-        while(cursor.moveToNext()) {Usuario u = new Usuario();
+        while(cursor.moveToNext()) {
+            Usuario u = new Usuario();
+            u.setUsuario(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_USUARIO)));
             u.setNombre(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_NOMBRE)));
             u.setApellidos(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_APELLIDOS)));
             u.setDireccion(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_DIRECCION)));
@@ -149,9 +162,11 @@ public class DatosUsuario extends AppCompatActivity {
             u.setEmail(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_EMAIL)));
             ((Pedido) this.getApplication()).setUsuairo(u);
 
-            Toast.makeText(this, "Apellido: " + u.getApellidos(), Toast.LENGTH_SHORT).show();
-
+            nombreText.setText(u.getNombre());
             apellidosText.setText(u.getApellidos());
+            direccionText.setText(u.getDireccion());
+            telefonoText.setText(String.valueOf(u.getTelefono()));
+            emailText.setText(u.getEmail());
         }
         cursor.close();
     }

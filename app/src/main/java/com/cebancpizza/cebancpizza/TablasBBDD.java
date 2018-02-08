@@ -13,6 +13,7 @@ public final class TablasBBDD {
     public static class TablaUsuario implements BaseColumns {
         public static final String TABLE_NAME = "usuario";
         public static final String COLUMN_ID = "usuario_id";
+        public static final String COLUMN_USUARIO = "usuario_usuario";
         public static final String COLUMN_NOMBRE = "usuario_nombre";
         public static final String COLUMN_APELLIDOS = "usuario_apellidos";
         public static final String COLUMN_TELEFONO = "usuario_telefono";

@@ -25,10 +25,12 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_INSERT_PIZZAS);
         db.execSQL(SQL_INSERT_BEBIDAS);
         db.execSQL(SQL_INSERT_POSTRES);
+        // Datos de prueba
+        db.execSQL(SQL_INSERT_USUARIOS_PRUEBA);
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (newVersion == 0) {
+        if (newVersion == 1) {
             db.execSQL(SQL_DELETE_TABLA_USUARIO);
             db.execSQL(SQL_DELETE_TABLA_CABECERA_PEDIDO);
             db.execSQL(SQL_DELETE_TABLA_LINEA_PEDIDO);
@@ -45,6 +47,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_TABLA_USUARIO =
             "CREATE TABLE " + TablasBBDD.TablaUsuario.TABLE_NAME + " (" +
                     TablasBBDD.TablaUsuario.COLUMN_ID + " INTEGER PRIMARY KEY," +
+                    TablasBBDD.TablaUsuario.COLUMN_USUARIO + " TEXT, " +
                     TablasBBDD.TablaUsuario.COLUMN_NOMBRE + " TEXT, " +
                     TablasBBDD.TablaUsuario.COLUMN_APELLIDOS + " TEXT, " +
                     TablasBBDD.TablaUsuario.COLUMN_TELEFONO + " TEXT, " +
@@ -92,7 +95,6 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             "DROP TABLE IF EXISTS " + TablasBBDD.TablaProducto.TABLE_NAME;
 
     // INSERTAR PRODUCTOS
-
     private static final String SQL_INSERT_PIZZAS =
             "INSERT INTO "+TablasBBDD.TablaProducto.TABLE_NAME+" ("+TablasBBDD.TablaProducto.COLUMN_NOMBRE+","+TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO +","+TablasBBDD.TablaProducto.COLUMN_TIPO_MASA +","+TablasBBDD.TablaProducto.COLUMN_TAMANNO +","+TablasBBDD.TablaProducto.COLUMN_PRECIO+") VALUES " +
                     "('Barbacoa','Pizza','Masa fina','Individual',5), " +
@@ -108,7 +110,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     "('Campiña','Pizza','Masa fina','Familiar',10), " +
                     "('Campiña','Pizza','Masa normal','Familiar',11), " +
                     "('Gourmet','Pizza','Masa fina','Individual',7.5), " +
-                    "('Gpurmet','Pizza','Masa normal','Individual',8.5), " +
+                    "('Gourmet','Pizza','Masa normal','Individual',8.5), " +
                     "('Gourmet','Pizza','Masa fina','Mediana',9.5), " +
                     "('Gourmet','Pizza','Masa normal','Mediana',10.5), " +
                     "('Gourmet','Pizza','Masa fina','Familiar',11.5), " +
@@ -164,4 +166,18 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     "('Platano','Fruta',1.25), " +
                     "('Piña','Fruta',1.5), " +
                     "('Melón','Fruta',1.5)";
+
+    //DATOS DE PRUEBA
+    private static final String SQL_INSERT_USUARIOS_PRUEBA =
+            "INSERT INTO " + TablasBBDD.TablaUsuario.TABLE_NAME + " (" +
+                    TablasBBDD.TablaUsuario.COLUMN_USUARIO + ", " +
+                    TablasBBDD.TablaUsuario.COLUMN_NOMBRE + ", " +
+                    TablasBBDD.TablaUsuario.COLUMN_APELLIDOS + ", " +
+                    TablasBBDD.TablaUsuario.COLUMN_TELEFONO + ", " +
+                    TablasBBDD.TablaUsuario.COLUMN_DIRECCION + ", " +
+                    TablasBBDD.TablaUsuario.COLUMN_EMAIL + ") " +
+                    "VALUES " +
+                        "('gmaniega','Gorka','Maniega','987654321','Dirección de Gorka','gmaiega@email.com'), " +
+                        "('etoledo','Eneko','Toledo','654321987','Dirección de Eneko','etoledo@email.com'), " +
+                        "('aetxezarreta','Aitor','Etxezarreta','321987654','Dirección de Aitor','aetxezarreta@email.com') ";
 }

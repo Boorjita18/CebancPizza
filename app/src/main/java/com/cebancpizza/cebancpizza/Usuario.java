@@ -5,9 +5,15 @@ package com.cebancpizza.cebancpizza;
  */
 
 public class Usuario {
-    String nombre, apellidos, direccion, email;
+    String usuario, nombre, apellidos, direccion, email;
     int telefono;
 
+    public String getUsuario() {
+        return usuario;
+    }
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
     public String getNombre() {
         return nombre;
     }

@@ -17,6 +17,7 @@
 
     <!-- Activity datos usuario -->
     <string name="datos_de_contacto">Datos del usuario</string>
+    <string name="datos_del_usuario_usuario">Usuario</string>
     <string name="datos_del_usuario_nombre">Nombre</string>
     <string name="datos_del_usuario_apellidos">Apellidos</string>
     <string name="datos_del_usuario_telefono">Teléfono</string>
