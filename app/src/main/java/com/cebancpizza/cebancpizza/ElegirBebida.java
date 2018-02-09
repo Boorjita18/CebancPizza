@@ -66,7 +66,8 @@ public class ElegirBebida extends AppCompatActivity {
                     String[] projection = {
                             TablasBBDD.TablaProducto.COLUMN_NOMBRE,
                             TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO,
-                            TablasBBDD.TablaProducto.COLUMN_PRECIO
+                            TablasBBDD.TablaProducto.COLUMN_PRECIO,
+                            TablasBBDD.TablaProducto.COLUMN_ID
 
                     };
 
@@ -89,8 +90,8 @@ public class ElegirBebida extends AppCompatActivity {
                     while(cursor.moveToNext()) {
                         i++;
                         Bebida b = new Bebida(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaProducto.COLUMN_NOMBRE)),canti[i],cursor.getFloat(cursor.getColumnIndex(TablasBBDD.TablaProducto.COLUMN_PRECIO)));
-
-                        añadirBebidasPedido(b.getNombre(),b.getCantidad(),b.getPrecio());
+                        b.setId(cursor.getLong(cursor.getColumnIndex(TablasBBDD.TablaProducto.COLUMN_ID)));
+                        añadirBebidasPedido(b.getNombre(),b.getCantidad(),b.getPrecio(),b.getId());
 
                     }
                     cursor.close();
@@ -126,9 +127,9 @@ public class ElegirBebida extends AppCompatActivity {
 
     }
 
-    private void añadirBebidasPedido(String s, int i, float v) {
+    private void añadirBebidasPedido(String s, int i, float v, long l) {
         Bebida bebida = new Bebida(s, i, v);
-
+        bebida.setId(l);
         ((Pedido) this.getApplication()).anadirBebida(bebida);
     }
 }

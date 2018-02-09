@@ -14,6 +14,8 @@ public class DatosUsuario extends AppCompatActivity {
 
     EditText usuarioText, nombreText, apellidosText, direccionText, telefonoText, emailText;
     FeedReaderDbHelper conexion = null;
+    Boolean busqueda;
+    long nuevaLinea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,8 @@ public class DatosUsuario extends AppCompatActivity {
         direccionText = (EditText)findViewById(R.id.direccionUsuario);
         telefonoText = (EditText)findViewById(R.id.telefonoUsuario);
         emailText = (EditText)findViewById(R.id.emailUsuario);
+
+        busqueda = false;
 
         try {
             conexion = new FeedReaderDbHelper(getApplicationContext());
@@ -87,21 +91,25 @@ public class DatosUsuario extends AppCompatActivity {
         }
 
         if (!errores) {
-            try {
-                SQLiteDatabase db = conexion.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                values.put(TablasBBDD.TablaUsuario.COLUMN_USUARIO, usuario);
-                values.put(TablasBBDD.TablaUsuario.COLUMN_NOMBRE, nombre);
-                values.put(TablasBBDD.TablaUsuario.COLUMN_APELLIDOS, apellidos);
-                values.put(TablasBBDD.TablaUsuario.COLUMN_DIRECCION, direccion);
-                values.put(TablasBBDD.TablaUsuario.COLUMN_TELEFONO, telefono);
-                values.put(TablasBBDD.TablaUsuario.COLUMN_EMAIL, email);
+            if (!busqueda) {
+                try {
+                    SQLiteDatabase db = conexion.getWritableDatabase();
+                    ContentValues values = new ContentValues();
+                    values.put(TablasBBDD.TablaUsuario.COLUMN_USUARIO, usuario);
+                    values.put(TablasBBDD.TablaUsuario.COLUMN_NOMBRE, nombre);
+                    values.put(TablasBBDD.TablaUsuario.COLUMN_APELLIDOS, apellidos);
+                    values.put(TablasBBDD.TablaUsuario.COLUMN_DIRECCION, direccion);
+                    values.put(TablasBBDD.TablaUsuario.COLUMN_TELEFONO, telefono);
+                    values.put(TablasBBDD.TablaUsuario.COLUMN_EMAIL, email);
 
-                long nuevaLinea = db.insert(TablasBBDD.TablaUsuario.TABLE_NAME, null, values);
-            }catch (Exception e){
-                Toast.makeText(this,"err insertar" +e.getMessage(), Toast.LENGTH_SHORT).show();
+                    nuevaLinea = db.insert(TablasBBDD.TablaUsuario.TABLE_NAME, null, values);
+                } catch (Exception e) {
+                    Toast.makeText(this, "err insertar" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
+
             Usuario u = new Usuario();
+            u.setId(nuevaLinea);
             u.setUsuario(usuario);
             u.setNombre(nombre);
             u.setApellidos(apellidos);
@@ -160,6 +168,8 @@ public class DatosUsuario extends AppCompatActivity {
             direccionText.setText("");
             telefonoText.setText("");
             emailText.setText("");
+
+            busqueda = false;
         } else {
             do {
                 Usuario u = new Usuario();
@@ -169,6 +179,7 @@ public class DatosUsuario extends AppCompatActivity {
                 u.setDireccion(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_DIRECCION)));
                 u.setTelefono(cursor.getInt(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_TELEFONO)));
                 u.setEmail(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_EMAIL)));
+                u.setId(cursor.getLong(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_ID)));
                 ((Pedido) this.getApplication()).setUsuairo(u);
 
                 nombreText.setText(u.getNombre());
@@ -176,7 +187,10 @@ public class DatosUsuario extends AppCompatActivity {
                 direccionText.setText(u.getDireccion());
                 telefonoText.setText(String.valueOf(u.getTelefono()));
                 emailText.setText(u.getEmail());
+                Toast.makeText(getApplicationContext(),"Bienvendo "+u.getNombre(),Toast.LENGTH_SHORT).show();
             } while (cursor.moveToNext());
+
+            busqueda = true;
         }
 
         cursor.close();

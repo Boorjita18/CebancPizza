@@ -78,8 +78,8 @@ public class ElegirPostre extends AppCompatActivity {
                     String[] projection = {
                             TablasBBDD.TablaProducto.COLUMN_NOMBRE,
                             TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO,
-                            TablasBBDD.TablaProducto.COLUMN_PRECIO
-
+                            TablasBBDD.TablaProducto.COLUMN_PRECIO,
+                            TablasBBDD.TablaProducto.COLUMN_ID
                     };
 
                     String selection = TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO+ " in (?,?,?)";
@@ -101,8 +101,8 @@ public class ElegirPostre extends AppCompatActivity {
                     while(cursor.moveToNext()) {
                         i++;
                         Postre p = new Postre(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaProducto.COLUMN_NOMBRE)),canti[i],cursor.getFloat(cursor.getColumnIndex(TablasBBDD.TablaProducto.COLUMN_PRECIO)));
-
-                        añadirPostrePedido(p.getNombre(),p.getCantidad(),p.getPrecio());
+                        p.setId(cursor.getLong(cursor.getColumnIndex(TablasBBDD.TablaProducto.COLUMN_ID)));
+                        añadirPostrePedido(p.getNombre(),p.getCantidad(),p.getPrecio(), p.getId());
 
                     }
                     cursor.close();
@@ -141,8 +141,9 @@ public class ElegirPostre extends AppCompatActivity {
         });
     }
 
-    private void añadirPostrePedido(String s, int i, float v) {
+    private void añadirPostrePedido(String s, int i, float v, long l) {
         Postre postre = new Postre(s, i, v);
+        postre.setId(l);
         ((Pedido) this.getApplication()).anadirPostre(postre);
     }
 }

@@ -8,6 +8,15 @@ public class Usuario {
     String usuario, nombre, apellidos, direccion, email;
     int telefono;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+    long id;
+
     public String getUsuario() {
         return usuario;
     }

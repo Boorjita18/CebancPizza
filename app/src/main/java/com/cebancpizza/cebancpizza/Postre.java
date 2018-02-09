@@ -10,6 +10,16 @@ public class Postre {
     int cantidad;
     Float precio;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    long id;
+
     public Postre(String nombre,int cantidad ,Float precio){
         this.nombre= nombre;
         this.cantidad=cantidad;

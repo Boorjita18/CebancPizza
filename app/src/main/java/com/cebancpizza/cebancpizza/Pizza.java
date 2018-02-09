@@ -8,6 +8,16 @@ public class Pizza {
     String nombre, tipoMasa, tamaño;
     Float precio;
     int cantidad;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    long id;
     public Pizza(){}
 
     public Pizza(String nombre,String tipoMasa,String tamaño,Float precio,int cantidad){

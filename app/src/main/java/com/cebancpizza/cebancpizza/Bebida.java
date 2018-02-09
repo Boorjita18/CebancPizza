@@ -10,6 +10,16 @@ public class Bebida {
     int cantidad;
     float precio;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    long id;
+
     public Bebida(String nombre,int cantidad,float precio){
         this.nombre = nombre;
         this.cantidad = cantidad;
