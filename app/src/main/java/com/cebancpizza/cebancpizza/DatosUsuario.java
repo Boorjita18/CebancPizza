@@ -129,30 +129,39 @@ public class DatosUsuario extends AppCompatActivity {
     public void buscar(View v) {
         SQLiteDatabase db = conexion.getReadableDatabase();
 
-        String[] projection = {
-                TablasBBDD.TablaUsuario.COLUMN_ID,
-                TablasBBDD.TablaUsuario.COLUMN_USUARIO,
-                TablasBBDD.TablaUsuario.COLUMN_NOMBRE,
-                TablasBBDD.TablaUsuario.COLUMN_APELLIDOS,
-                TablasBBDD.TablaUsuario.COLUMN_TELEFONO,
-                TablasBBDD.TablaUsuario.COLUMN_DIRECCION,
-                TablasBBDD.TablaUsuario.COLUMN_EMAIL
-        };
+            String[] projection = {
+                    TablasBBDD.TablaUsuario.COLUMN_ID,
+                    TablasBBDD.TablaUsuario.COLUMN_USUARIO,
+                    TablasBBDD.TablaUsuario.COLUMN_NOMBRE,
+                    TablasBBDD.TablaUsuario.COLUMN_APELLIDOS,
+                    TablasBBDD.TablaUsuario.COLUMN_TELEFONO,
+                    TablasBBDD.TablaUsuario.COLUMN_DIRECCION,
+                    TablasBBDD.TablaUsuario.COLUMN_EMAIL
+            };
 
-        String selection = TablasBBDD.TablaUsuario.COLUMN_USUARIO + " = ?";
-        String[] selectionArgs = { usuarioText.getText().toString() };
+            String selection = TablasBBDD.TablaUsuario.COLUMN_USUARIO + " = ?";
+            String[] selectionArgs = {usuarioText.getText().toString()};
 
-        Cursor cursor = db.query(
-                TablasBBDD.TablaUsuario.TABLE_NAME,       // The table to query
-                projection,                               // The columns to return
-                selection,                                // The columns for the WHERE clause
-                selectionArgs,                            // The values for the WHERE clause
-                null,                                     // don't group the rows
-                null,                                     // don't filter by row groups
-                null                                      // The sort order
-        );
+            Cursor cursor = db.query(
+                    TablasBBDD.TablaUsuario.TABLE_NAME,       // The table to query
+                    projection,                               // The columns to return
+                    selection,                                // The columns for the WHERE clause
+                    selectionArgs,                            // The values for the WHERE clause
+                    null,                                     // don't group the rows
+                    null,                                     // don't filter by row groups
+                    null                                      // The sort order
+            );
 
-            while(cursor.moveToNext()) {
+        if (cursor.moveToFirst() == false){
+            Toast.makeText(this, "Ese usuario no existe, rellena los datos y pulsa 'SIGUIENTE' para registrarte", Toast.LENGTH_LONG).show();
+
+            nombreText.setText("");
+            apellidosText.setText("");
+            direccionText.setText("");
+            telefonoText.setText("");
+            emailText.setText("");
+        } else {
+            do {
                 Usuario u = new Usuario();
                 u.setUsuario(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_USUARIO)));
                 u.setNombre(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_NOMBRE)));
@@ -167,7 +176,9 @@ public class DatosUsuario extends AppCompatActivity {
                 direccionText.setText(u.getDireccion());
                 telefonoText.setText(String.valueOf(u.getTelefono()));
                 emailText.setText(u.getEmail());
-            }
+            } while (cursor.moveToNext());
+        }
+
         cursor.close();
     }
 }
