@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 7;
+    public static final int DATABASE_VERSION = 8;
     public static final String DATABASE_NAME = "PizzeriaCebanc.db";
 
     public FeedReaderDbHelper(Context context) {
@@ -31,7 +31,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_INSERT_POSTRES);
         db.execSQL(SQL_INSERT_MASAS);
         db.execSQL(SQL_INSERT_TAMANNOS);
-        // DATOS DE PRUEBA
+        // DATOS DE PRUEBA INICIALES
         db.execSQL(SQL_INSERT_USUARIOS_PRUEBA);
     }
 
@@ -86,6 +86,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     TablasBBDD.TablaLineaPedido.COLUMN_ID_MASA + " INTEGER," +
                     TablasBBDD.TablaLineaPedido.COLUMN_ID_TAMANNO + " INTEGER," +
                     TablasBBDD.TablaLineaPedido.COLUMN_CANTIDAD + " INTEGER," +
+                    TablasBBDD.TablaLineaPedido.COLUMN_PRECIO_LINEA + " NUMERIC," +
                     "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_CABECERA_PEDIDO + ") " +
                         "REFERENCES " + TablasBBDD.TablaCabeceraPedido.TABLE_NAME + "(" + TablasBBDD.TablaCabeceraPedido.COLUMN_ID + "), " +
                     "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_PRODUCTO + ") " +
@@ -191,7 +192,7 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                         "('Mediana',2), " +
                         "('Familiar',4)";
 
-    //INSERTAR DATOS DE PRUEBA
+    //INSERTAR DATOS DE PRUEBA INICIALES
     private static final String SQL_INSERT_USUARIOS_PRUEBA =
             "INSERT INTO " + TablasBBDD.TablaUsuario.TABLE_NAME + " (" +
                     TablasBBDD.TablaUsuario.COLUMN_USUARIO + ", " +

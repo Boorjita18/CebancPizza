@@ -38,6 +38,7 @@ public final class TablasBBDD {
         public static final String COLUMN_ID_MASA = "id_masa";
         public static final String COLUMN_ID_TAMANNO = "id_tamanno";
         public static final String COLUMN_CANTIDAD = "linea_pedido_cantidad";
+        public static final String COLUMN_PRECIO_LINEA = "linea_pedido_precio";
     }
 
     // TABLA PRODUCTO
