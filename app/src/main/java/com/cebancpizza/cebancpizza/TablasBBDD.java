@@ -35,6 +35,8 @@ public final class TablasBBDD {
         public static final String COLUMN_ID = "linea_pedido_id";
         public static final String COLUMN_ID_CABECERA_PEDIDO = "id_cabecera_pedido";
         public static final String COLUMN_ID_PRODUCTO = "id_proucto";
+        public static final String COLUMN_ID_MASA = "id_masa";
+        public static final String COLUMN_ID_TAMANNO = "id_tamanno";
         public static final String COLUMN_CANTIDAD = "linea_pedido_cantidad";
     }
 
@@ -44,8 +46,22 @@ public final class TablasBBDD {
         public static final String COLUMN_ID = "producto_id";
         public static final String COLUMN_NOMBRE = "producto_nombre";
         public static final String COLUMN_TIPO_PRODUCTO = "producto_tipo";
-        public static final String COLUMN_TIPO_MASA = "producto_tipo_masa";
-        public static final String COLUMN_TAMANNO = "producto_tamanno";
         public static final String COLUMN_PRECIO = "producto_precio";
+    }
+
+    // TABLA MASA
+    public static class TablaMasa implements BaseColumns {
+        public static final String TABLE_NAME = "masa";
+        public static final String COLUMN_ID = "masa_id";
+        public static final String COLUMN_NOMBRE = "masa_nombre";
+        public static final String COLUMN_PRECIO = "masa_precio";
+    }
+
+    // TABLA TAMAÑO
+    public static class TablaTamanno implements BaseColumns {
+        public static final String TABLE_NAME = "tamanno";
+        public static final String COLUMN_ID = "tamanno_id";
+        public static final String COLUMN_NOMBRE = "tamanno_nombre";
+        public static final String COLUMN_PRECIO = "tamanno_precio";
     }
 }

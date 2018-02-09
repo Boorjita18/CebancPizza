@@ -10,8 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
-    // Poner en la versión 1 para reiniciar la base de datos
-    public static final int DATABASE_VERSION = 3;
+    public static final int DATABASE_VERSION = 7;
     public static final String DATABASE_NAME = "PizzeriaCebanc.db";
 
     public FeedReaderDbHelper(Context context) {
@@ -19,13 +18,19 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
     }
 
     public void onCreate(SQLiteDatabase db) {
+        // TABLAS
         db.execSQL(SQL_CREATE_TABLA_PRODUCTO);
         db.execSQL(SQL_CREATE_TABLA_USUARIO);
         db.execSQL(SQL_CREATE_TABLA_CABECERA_PEDIDO);
         db.execSQL(SQL_CREATE_TABLA_LINEA_PEDIDO);
+        db.execSQL(SQL_CREATE_TABLA_MASA);
+        db.execSQL(SQL_CREATE_TABLA_TAMANNO);
+        // DATOS
         db.execSQL(SQL_INSERT_PIZZAS);
         db.execSQL(SQL_INSERT_BEBIDAS);
         db.execSQL(SQL_INSERT_POSTRES);
+        db.execSQL(SQL_INSERT_MASAS);
+        db.execSQL(SQL_INSERT_TAMANNOS);
         // DATOS DE PRUEBA
         db.execSQL(SQL_INSERT_USUARIOS_PRUEBA);
     }
@@ -36,6 +41,8 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             db.execSQL(SQL_DELETE_TABLA_CABECERA_PEDIDO);
             db.execSQL(SQL_DELETE_TABLA_LINEA_PEDIDO);
             db.execSQL(SQL_DELETE_TABLA_PRODUCTO);
+            db.execSQL(SQL_DELETE_TABLA_MASA);
+            db.execSQL(SQL_DELETE_TABLA_TAMANNO);
             onCreate(db);
         }
     }
@@ -76,11 +83,17 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     TablasBBDD.TablaLineaPedido.COLUMN_ID + " INTEGER PRIMARY KEY," +
                     TablasBBDD.TablaLineaPedido.COLUMN_ID_CABECERA_PEDIDO + " INTEGER," +
                     TablasBBDD.TablaLineaPedido.COLUMN_ID_PRODUCTO + " INTEGER," +
+                    TablasBBDD.TablaLineaPedido.COLUMN_ID_MASA + " INTEGER," +
+                    TablasBBDD.TablaLineaPedido.COLUMN_ID_TAMANNO + " INTEGER," +
                     TablasBBDD.TablaLineaPedido.COLUMN_CANTIDAD + " INTEGER," +
                     "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_CABECERA_PEDIDO + ") " +
                         "REFERENCES " + TablasBBDD.TablaCabeceraPedido.TABLE_NAME + "(" + TablasBBDD.TablaCabeceraPedido.COLUMN_ID + "), " +
                     "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_PRODUCTO + ") " +
-                        "REFERENCES " + TablasBBDD.TablaProducto.TABLE_NAME + "(" + TablasBBDD.TablaProducto.COLUMN_ID + "))";
+                        "REFERENCES " + TablasBBDD.TablaProducto.TABLE_NAME + "(" + TablasBBDD.TablaProducto.COLUMN_ID + ")," +
+                    "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_MASA + ") " +
+                        "REFERENCES " + TablasBBDD.TablaMasa.TABLE_NAME + "(" + TablasBBDD.TablaMasa.COLUMN_ID + "), " +
+                    "FOREIGN KEY (" + TablasBBDD.TablaLineaPedido.COLUMN_ID_TAMANNO + ") " +
+                        "REFERENCES " + TablasBBDD.TablaTamanno.TABLE_NAME + "(" + TablasBBDD.TablaTamanno.COLUMN_ID + "))";
 
     private static final String SQL_DELETE_TABLA_LINEA_PEDIDO =
             "DROP TABLE IF EXISTS " + TablasBBDD.TablaLineaPedido.TABLE_NAME;
@@ -91,70 +104,46 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     TablasBBDD.TablaProducto.COLUMN_ID + " INTEGER PRIMARY KEY," +
                     TablasBBDD.TablaProducto.COLUMN_NOMBRE + " TEXT, " +
                     TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + " TEXT, " +
-                    TablasBBDD.TablaProducto.COLUMN_TIPO_MASA + " TEXT, " +
-                    TablasBBDD.TablaProducto.COLUMN_TAMANNO + " TEXT, " +
                     TablasBBDD.TablaProducto.COLUMN_PRECIO + " NUMERIC)";
 
     private static final String SQL_DELETE_TABLA_PRODUCTO =
             "DROP TABLE IF EXISTS " + TablasBBDD.TablaProducto.TABLE_NAME;
+
+    // TABLA MASA
+    private static final String SQL_CREATE_TABLA_MASA =
+            "CREATE TABLE " + TablasBBDD.TablaMasa.TABLE_NAME + " (" +
+                    TablasBBDD.TablaMasa.COLUMN_ID + " INTEGER PRIMARY KEY," +
+                    TablasBBDD.TablaMasa.COLUMN_NOMBRE + " TEXT, " +
+                    TablasBBDD.TablaMasa.COLUMN_PRECIO + " NUMERIC)";
+
+    private static final String SQL_DELETE_TABLA_MASA =
+            "DROP TABLE IF EXISTS " + TablasBBDD.TablaMasa.TABLE_NAME;
+
+    // TABLA TAMAÑO
+    private static final String SQL_CREATE_TABLA_TAMANNO =
+            "CREATE TABLE " + TablasBBDD.TablaTamanno.TABLE_NAME + " (" +
+                    TablasBBDD.TablaTamanno.COLUMN_ID + " INTEGER PRIMARY KEY," +
+                    TablasBBDD.TablaTamanno.COLUMN_NOMBRE + " TEXT, " +
+                    TablasBBDD.TablaTamanno.COLUMN_PRECIO + " NUMERIC)";
+
+    private static final String SQL_DELETE_TABLA_TAMANNO =
+            "DROP TABLE IF EXISTS " + TablasBBDD.TablaTamanno.TABLE_NAME;
 
     // INSERTAR PRODUCTOS
     private static final String SQL_INSERT_PIZZAS =
             "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +
                     TablasBBDD.TablaProducto.COLUMN_NOMBRE + ", " +
                     TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + ", " +
-                    TablasBBDD.TablaProducto.COLUMN_TIPO_MASA + ", " +
-                    TablasBBDD.TablaProducto.COLUMN_TAMANNO + ", " +
                     TablasBBDD.TablaProducto.COLUMN_PRECIO + ") " +
                     "VALUES " +
-                        "('Barbacoa','Pizza','Masa fina','Individual',5), " +
-                        "('Barbacoa','Pizza','Masa normal','Individual',6), " +
-                        "('Barbacoa','Pizza','Masa fina','Mediana',7), " +
-                        "('Barbacoa','Pizza','Masa normal','Mediana',8), " +
-                        "('Barbacoa','Pizza','Masa fina','Familiar',9), " +
-                        "('Barbacoa','Pizza','Masa normal','Familiar',10), " +
-                        "('Campiña','Pizza','Masa fina','Individual',6), " +
-                        "('Campiña','Pizza','Masa normal','Individual',7), " +
-                        "('Campiña','Pizza','Masa fina','Mediana',8), " +
-                        "('Campiña','Pizza','Masa normal','Mediana',9), " +
-                        "('Campiña','Pizza','Masa fina','Familiar',10), " +
-                        "('Campiña','Pizza','Masa normal','Familiar',11), " +
-                        "('Gourmet','Pizza','Masa fina','Individual',7.5), " +
-                        "('Gourmet','Pizza','Masa normal','Individual',8.5), " +
-                        "('Gourmet','Pizza','Masa fina','Mediana',9.5), " +
-                        "('Gourmet','Pizza','Masa normal','Mediana',10.5), " +
-                        "('Gourmet','Pizza','Masa fina','Familiar',11.5), " +
-                        "('Gourmet','Pizza','Masa normal','Familiar',12.5), " +
-                        "('Hawaiana','Pizza','Masa fina','Individual',6), " +
-                        "('Hawaiana','Pizza','Masa normal','Individual',7),  " +
-                        "('Hawaiana','Pizza','Masa fina','Mediana',8), " +
-                        "('Hawaiana','Pizza','Masa normal','Mediana',9), " +
-                        "('Hawaiana','Pizza','Masa fina','Familiar',10), " +
-                        "('Hawaiana','Pizza','Masa normal','Familiar',11), " +
-                        "('Jamón y Queso','Pizza','Masa fina','Individual',5), " +
-                        "('Jamón y Queso','Pizza','Masa normal','Individual',6), " +
-                        "('Jamón y Queso','Pizza','Masa fina','Mediana',7), " +
-                        "('Jamón y Queso','Pizza','Masa normal','Mediana',8), " +
-                        "('Jamón y Queso','Pizza','Masa fina','Familiar',9), " +
-                        "('Jamón y Queso','Pizza','Masa normal','Familiar',10), " +
-                        "('Sin Gluten','Pizza','Masa fina','Individual',6), " +
-                        "('Sin Gluten','Pizza','Masa normal','Individual',7), " +
-                        "('Sin Gluten','Pizza','Masa fina','Mediana',8), " +
-                        "('Sin Gluten','Pizza','Masa normal','Mediana',9), " +
-                        "('Sin GLuten','Pizza','Masa fina','Familiar',10), " +
-                        "('Sin Gluten','Pizza','Masa normal','Familiar',11), " +
-                        "('Pepperoni','Pizza','Masa fina','Individual',7), " +
-                        "('Pepperoni','Pizza','Masa normal','Individual',8), " +
-                        "('Pepperoni','Pizza','Masa fina','Mediana',9), " +
-                        "('Pepperoni','Pizza','Masa normal','Mediana',10), " +
-                        "('Pepperoni','Pizza','Masa fina','Familiar',11), " +
-                        "('Pepperoni','Pizza','Masa normal','Familiar',12), " +
-                        "('Pulled Beef','Pizza','Masa fina','Individual',7.5), " +
-                        "('Pulled Beef','Pizza','Masa normal','Individual',8.5), " +
-                        "('Pulled Beef','Pizza','Masa fina','Mediana',9.5), " +
-                        "('Pulled Beef','Pizza','Masa normal','Mediana',10.5), " +
-                        "('Pulled Beef','Pizza','Masa fina','Familiar',11.5), " +
-                        "('Pulled Beef','Pizza','Masa normal','Familiar',12.5)";
+                        "('Barbacoa','Pizza',5), " +
+                        "('Campiña','Pizza',6), " +
+                        "('Gourmet','Pizza',7.5), " +
+                        "('Hawaiana','Pizza',6), " +
+                        "('Jamón y Queso','Pizza',5), " +
+                        "('Sin Gluten','Pizza',6), " +
+                        "('Pepperoni','Pizza',7), " +
+                        "('Pulled Beef','Pizza',7.5)";
 
     private static final String SQL_INSERT_BEBIDAS =
             "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +
@@ -185,6 +174,23 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                         "('Piña','Fruta',1.5), " +
                         "('Melón','Fruta',1.5)";
 
+    private static final String SQL_INSERT_MASAS =
+            "INSERT INTO " + TablasBBDD.TablaMasa.TABLE_NAME + " (" +
+                    TablasBBDD.TablaMasa.COLUMN_NOMBRE + ", " +
+                    TablasBBDD.TablaMasa.COLUMN_PRECIO + ") " +
+                    "VALUES " +
+                    "('Masa fina',0), " +
+                    "('Masa normal',1)";
+
+    private static final String SQL_INSERT_TAMANNOS =
+            "INSERT INTO " + TablasBBDD.TablaTamanno.TABLE_NAME + " (" +
+                    TablasBBDD.TablaTamanno.COLUMN_NOMBRE + ", " +
+                    TablasBBDD.TablaTamanno.COLUMN_PRECIO + ") " +
+                    "VALUES " +
+                    "('Indvidual',0), " +
+                    "('Mediana',2), " +
+                    "('Familiar',4)";
+
     //INSERTAR DATOS DE PRUEBA
     private static final String SQL_INSERT_USUARIOS_PRUEBA =
             "INSERT INTO " + TablasBBDD.TablaUsuario.TABLE_NAME + " (" +
@@ -197,6 +203,5 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     "VALUES " +
                         "('gmaniega','Gorka','Maniega','987654321','Dirección de Gorka','gmaiega@email.com'), " +
                         "('etoledo','Eneko','Toledo','654321987','Dirección de Eneko','etoledo@email.com'), " +
-                        "('a','a','a','1','Dirección de a','a@email.com'), " +
                         "('aetxezarreta','Aitor','Etxezarreta','321987654','Dirección de Aitor','aetxezarreta@email.com') ";
 }
