@@ -164,12 +164,12 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + ", " +
                     TablasBBDD.TablaProducto.COLUMN_PRECIO + ") " +
                     "VALUES " +
-                        "('Chocolate','Tarta',3.25), " +
-                        "('Hojaldre','Tarta',3.25), " +
-                        "('Manzana','Tarta',3.5), " +
-                        "('Chocolate','Helado',2), " +
-                        "('Vainilla','Helado',2), " +
-                        "('Yogurt','Helado',2), " +
+                        "('Tarta de Chocolate','Tarta',3.25), " +
+                        "('Tarta de Hojaldre','Tarta',3.25), " +
+                        "('Tarta de Manzana','Tarta',3.5), " +
+                        "('Helado de Chocolate','Helado',2), " +
+                        "('Helado de Vainilla','Helado',2), " +
+                        "('Helado de Yogurt','Helado',2), " +
                         "('Platano','Fruta',1.25), " +
                         "('Piña','Fruta',1.5), " +
                         "('Melón','Fruta',1.5)";

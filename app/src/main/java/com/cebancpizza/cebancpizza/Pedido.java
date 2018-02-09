@@ -52,7 +52,7 @@ public class Pedido extends android.app.Application {
         for (Bebida bebida : listaBebidas){
 
             if (bebida.getNombre().equals(b.getNombre())){
-                listaPizzas.remove(bebida);
+                listaBebidas.remove(bebida);
             }
         }
     }
@@ -65,6 +65,7 @@ public class Pedido extends android.app.Application {
 
                 if (bebida.getNombre().equals(b.getNombre())){
                     listaBebidas.get(listaBebidas.indexOf(bebida)).setCantidad(b.cantidad);
+                    modificado=true;
                 }
             }
             if (!modificado){
@@ -89,6 +90,7 @@ public class Pedido extends android.app.Application {
 
                 if (postre.getNombre().equals(p.getNombre())){
                     listaPostres.get(listaPostres.indexOf(postre)).setCantidad(p.cantidad);
+                    modificado=true;
                 }
             }
             if (!modificado){
