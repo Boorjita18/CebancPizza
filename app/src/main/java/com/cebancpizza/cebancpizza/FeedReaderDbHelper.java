@@ -179,17 +179,17 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     TablasBBDD.TablaMasa.COLUMN_NOMBRE + ", " +
                     TablasBBDD.TablaMasa.COLUMN_PRECIO + ") " +
                     "VALUES " +
-                    "('Masa fina',0), " +
-                    "('Masa normal',1)";
+                        "('Masa fina',0), " +
+                        "('Masa normal',1)";
 
     private static final String SQL_INSERT_TAMANNOS =
             "INSERT INTO " + TablasBBDD.TablaTamanno.TABLE_NAME + " (" +
                     TablasBBDD.TablaTamanno.COLUMN_NOMBRE + ", " +
                     TablasBBDD.TablaTamanno.COLUMN_PRECIO + ") " +
                     "VALUES " +
-                    "('Indvidual',0), " +
-                    "('Mediana',2), " +
-                    "('Familiar',4)";
+                        "('Indvidual',0), " +
+                        "('Mediana',2), " +
+                        "('Familiar',4)";
 
     //INSERTAR DATOS DE PRUEBA
     private static final String SQL_INSERT_USUARIOS_PRUEBA =
