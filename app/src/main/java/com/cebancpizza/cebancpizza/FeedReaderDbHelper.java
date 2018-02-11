@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 9;
+    public static final int DATABASE_VERSION = 11;
     public static final String DATABASE_NAME = "PizzeriaCebanc.db";
 
     public FeedReaderDbHelper(Context context) {
@@ -137,16 +137,18 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +
                     TablasBBDD.TablaProducto.COLUMN_NOMBRE + ", " +
                     TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + ", " +
-                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ") " +
+                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_IMAGEN + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_DESCRIPCION+ ") " +
                     "VALUES " +
-                        "('Barbacoa','Pizza',5), " +
-                        "('Campiña','Pizza',6), " +
-                        "('Gourmet','Pizza',7.5), " +
-                        "('Hawaiana','Pizza',6), " +
-                        "('Jamón y Queso','Pizza',5), " +
-                        "('Sin Gluten','Pizza',6), " +
-                        "('Pepperoni','Pizza',7), " +
-                        "('Pulled Beef','Pizza',7.5)";
+                        "('Barbacoa','Pizza',5,'barbacoa','Salsa barbacoa, queso 100% mozzarella, ternera especiada, cebolla, bacon, maíz.'), " +
+                        "('Campiña','Pizza',6,'campina','Salsa de tomate, extra de queso 100% mozzarella, champiñón, pimiento verde, cebolla, aceitunas negras y tomate natural.'), " +
+                        "('Gourmet','Pizza',7.5,'gourmet','Abundantes filetes de carne de ternera, espárragos verdes finos, tomates frescos y salsa holandesa, aderezada con pimienta de bistec picante.'), " +
+                        "('Hawaiana','Pizza',6,'hawaiana','Salsa de tomate, extra de queso 100% mozzarella, doble de York y piña.'), " +
+                        "('Jamón y Queso','Pizza',5,'jamonqueso','Salsa de tomate, extra de queso 100% mozzarella y jamón'), " +
+                        "('Sin Gluten','Pizza',6,'messiesingluten','Crea tu propia pizza. Con queso 100% mozzarella, salsa a elegir entre tomate y BBQ y nuestros toppings: pollo a la parrilla, bacon o york.'), " +
+                        "('Pepperoni','Pizza',7,'peperoni','Salsa de tomate, extra de queso 100% mozzarella y doble de pepperoni.'), " +
+                        "('Pulled Beef','Pizza',7.5,'pulledbeef','Salsa BBQ, mozzarella, ternera deshilachada asada lentamente, cebolla, bacon, salsa chimichurri.')";
 
     private static final String SQL_INSERT_BEBIDAS =
             "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +

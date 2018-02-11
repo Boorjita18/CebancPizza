@@ -94,9 +94,7 @@ public class OpcionesPizza extends AppCompatActivity {
     public void anadirPizzaPedido(View v){
         Pizza pizza = new Pizza(nombre.getText().toString(),masa,tamanno,precioUnitario,Integer.parseInt(cantidad.getText().toString()));
         ((Pedido) this.getApplication()).anadirPizza(pizza);
-        Intent intent = new Intent(this, ElegirPizza.class);
-
-        startActivity(intent);
+        finish();
     }
     public void volver(View v){
         finish();

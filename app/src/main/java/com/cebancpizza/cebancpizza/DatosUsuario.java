@@ -126,7 +126,7 @@ public class DatosUsuario extends AppCompatActivity {
 
     public void siguiente(View v) {
         if(!comprobarUsuario()) {
-            Intent intent = new Intent(this, ElegirPizza.class);
+            Intent intent = new Intent(this, PizzasView.class);
             startActivity(intent);
         }
     }

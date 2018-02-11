@@ -40,7 +40,8 @@
             android:name=".Finalizar"
             android:label=" " />
         <activity android:name=".BebidasView" />
-        <activity android:name=".PostresView"></activity>
+        <activity android:name=".PostresView" />
+        <activity android:name=".PizzasView"></activity>
     </application>
 
 </manifest>
