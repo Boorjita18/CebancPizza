@@ -73,6 +73,29 @@ public class Pedido extends android.app.Application {
             }
         }
     }
+
+    public int getCantidadBebida(long id){
+
+        for (Bebida bebida : listaBebidas){
+
+            if (bebida.getId()==id){
+                return bebida.getCantidad();
+            }
+        }
+        return 0;
+    }
+
+    public int getCantidadPostre(long id){
+
+        for (Postre postre : listaPostres){
+
+            if (postre.getId()==id){
+                return postre.getCantidad();
+            }
+        }
+        return 0;
+    }
+
     public void borrarPostre(Postre p){
         for (Postre postre : listaPostres){
 

@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 8;
+    public static final int DATABASE_VERSION = 9;
     public static final String DATABASE_NAME = "PizzeriaCebanc.db";
 
     public FeedReaderDbHelper(Context context) {
@@ -105,6 +105,8 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
                     TablasBBDD.TablaProducto.COLUMN_ID + " INTEGER PRIMARY KEY," +
                     TablasBBDD.TablaProducto.COLUMN_NOMBRE + " TEXT, " +
                     TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + " TEXT, " +
+                    TablasBBDD.TablaProducto.COLUMN_IMAGEN + " TEXT, " +
+                    TablasBBDD.TablaProducto.COLUMN_DESCRIPCION + " TEXT, " +
                     TablasBBDD.TablaProducto.COLUMN_PRECIO + " NUMERIC)";
 
     private static final String SQL_DELETE_TABLA_PRODUCTO =
@@ -150,30 +152,32 @@ public class FeedReaderDbHelper extends SQLiteOpenHelper {
             "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +
                     TablasBBDD.TablaProducto.COLUMN_NOMBRE + ", " +
                     TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + ", " +
-                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ") " +
+                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_IMAGEN+ ") " +
                     "VALUES " +
-                        "('Coca Cola','Bebida',2.25), " +
-                        "('Limon','Bebida',2.25), " +
-                        "('Red Bull','Bebida',3), " +
-                        "('Nestea','Bebida',2), " +
-                        "('Cerveza','Bebida',2.25), " +
-                        "('Agua','Bebida',1.5)";
+                        "('Coca Cola','Bebida',2.25,'cocacola'), " +
+                        "('Limon','Bebida',2.25,'limon'), " +
+                        "('Red Bull','Bebida',3,'redbull'), " +
+                        "('Nestea','Bebida',2,'nestea'), " +
+                        "('Cerveza','Bebida',2.25,'cerveza'), " +
+                        "('Agua','Bebida',1.5,'agua')";
 
     private static final String SQL_INSERT_POSTRES =
             "INSERT INTO " + TablasBBDD.TablaProducto.TABLE_NAME + " (" +
                     TablasBBDD.TablaProducto.COLUMN_NOMBRE + ", " +
                     TablasBBDD.TablaProducto.COLUMN_TIPO_PRODUCTO + ", " +
-                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ") " +
+                    TablasBBDD.TablaProducto.COLUMN_PRECIO + ", " +
+                    TablasBBDD.TablaProducto.COLUMN_IMAGEN+ ") " +
                     "VALUES " +
-                        "('Tarta de Chocolate','Tarta',3.25), " +
-                        "('Tarta de Hojaldre','Tarta',3.25), " +
-                        "('Tarta de Manzana','Tarta',3.5), " +
-                        "('Helado de Chocolate','Helado',2), " +
-                        "('Helado de Vainilla','Helado',2), " +
-                        "('Helado de Yogurt','Helado',2), " +
-                        "('Platano','Fruta',1.25), " +
-                        "('Piña','Fruta',1.5), " +
-                        "('Melón','Fruta',1.5)";
+                        "('Tarta de Chocolate','Postre',3.25, 'tartachocolate'), " +
+                        "('Tarta de Hojaldre','Postre',3.25, 'hojaldre'), " +
+                        "('Tarta de Manzana','Postre',3.5, 'manzana'), " +
+                        "('Helado de Chocolate','Postre',2, 'heladochocolate'), " +
+                        "('Helado de Vainilla','Postre',2, 'vainilla'), " +
+                        "('Helado de Yogurt','Postre',2, 'yogurt'), " +
+                        "('Platano','Postre',1.25, 'platanos'), " +
+                        "('Piña','Postre',1.5, 'pina'), " +
+                        "('Melón','Postre',1.5, 'melon')";
 
     private static final String SQL_INSERT_MASAS =
             "INSERT INTO " + TablasBBDD.TablaMasa.TABLE_NAME + " (" +

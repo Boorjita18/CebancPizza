@@ -9,6 +9,8 @@ public class Bebida {
     String nombre;
     int cantidad;
     float precio;
+//    String imagen;
+
 
     public long getId() {
         return id;
@@ -25,6 +27,12 @@ public class Bebida {
         this.cantidad = cantidad;
         this.precio = precio;
     }
+//    public Bebida(String nombre,int cantidad,float precio,String imagen){
+//        this.nombre = nombre;
+//        this.cantidad = cantidad;
+//        this.precio = precio;
+//        this.imagen=imagen;
+//    }
 
     public String getNombre() {
         return nombre;
@@ -33,6 +41,14 @@ public class Bebida {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+//    public String getImagen() {
+//        return imagen;
+//    }
+
+//    public void setImagen(String imagen) {
+//        this.imagen = imagen;
+//    }
 
     public Float getPrecio() {
         return precio;

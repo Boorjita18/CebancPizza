@@ -48,6 +48,8 @@ public final class TablasBBDD {
         public static final String COLUMN_NOMBRE = "producto_nombre";
         public static final String COLUMN_TIPO_PRODUCTO = "producto_tipo";
         public static final String COLUMN_PRECIO = "producto_precio";
+        public static final String COLUMN_IMAGEN = "producto_imagen";
+        public static final String COLUMN_DESCRIPCION = "producto_descripcion";
     }
 
     // TABLA MASA

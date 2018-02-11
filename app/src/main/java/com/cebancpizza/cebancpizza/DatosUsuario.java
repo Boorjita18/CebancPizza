@@ -187,7 +187,7 @@ public class DatosUsuario extends AppCompatActivity {
                 direccionText.setText(u.getDireccion());
                 telefonoText.setText(String.valueOf(u.getTelefono()));
                 emailText.setText(u.getEmail());
-                Toast.makeText(getApplicationContext(),"Bienvendo "+u.getNombre(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),"Bienvendo "+u.getNombre(),Toast.LENGTH_SHORT).show();
             } while (cursor.moveToNext());
 
             busqueda = true;

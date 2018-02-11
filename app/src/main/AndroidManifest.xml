@@ -35,8 +35,12 @@
             android:label=" " />
         <activity
             android:name=".RevisarPedido"
-            android:label=" "></activity>
-        <activity android:name=".Finalizar" android:label=" "></activity>
+            android:label=" " />
+        <activity
+            android:name=".Finalizar"
+            android:label=" " />
+        <activity android:name=".BebidasView" />
+        <activity android:name=".PostresView"></activity>
     </application>
 
 </manifest>

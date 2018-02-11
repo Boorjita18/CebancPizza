@@ -86,7 +86,7 @@ public class ElegirPizza extends AppCompatActivity {
     }
 
     public void elegirBebida(View v) {
-        Intent intent = new Intent(this, ElegirBebida.class);
+        Intent intent = new Intent(this, BebidasView.class);
         startActivity(intent);
     }
 }
