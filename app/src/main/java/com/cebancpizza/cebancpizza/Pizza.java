@@ -18,6 +18,8 @@ public class Pizza {
     }
 
     long id;
+    long masaID;
+    long tamanoID;
     public Pizza(){}
 
     public Pizza(String nombre,String tipoMasa,String tamaño,Float precio,int cantidad){
@@ -60,5 +62,21 @@ public class Pizza {
     }
     public void anadirCantidad(int cantidad){
         this.cantidad+=cantidad;
+    }
+
+    public long getMasaId() {
+        return masaID;
+    }
+
+    public void setMasaId(long id) {
+        this.masaID = id;
+    }
+
+    public long getTamanoId() {
+        return tamanoID;
+    }
+
+    public void setTamanoId(long id) {
+        this.tamanoID = id;
     }
 }

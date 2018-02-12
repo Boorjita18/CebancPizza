@@ -41,7 +41,8 @@
             android:label=" " />
         <activity android:name=".BebidasView" />
         <activity android:name=".PostresView" />
-        <activity android:name=".PizzasView"></activity>
+        <activity android:name=".PizzasView" />
+        <activity android:name=".MostrarPedidos"></activity>
     </application>
 
 </manifest>

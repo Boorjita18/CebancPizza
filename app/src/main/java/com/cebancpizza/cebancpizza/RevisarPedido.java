@@ -106,19 +106,23 @@ public class RevisarPedido extends AppCompatActivity {
                 Toast.makeText(this, "err insertar" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
-        /*for (Pizza pizza:listaPizzas) {
+        for (Pizza pizza:listaPizzas) {
             try {
                 SQLiteDatabase db = conexion.getWritableDatabase();
                 ContentValues values = new ContentValues();
                 values.put(TablasBBDD.TablaLineaPedido.COLUMN_ID_CABECERA_PEDIDO, cabecera);
-                values.put(TablasBBDD.TablaLineaPedido.COLUMN_ID_PRODUCTO,postre.getId() );
-                values.put(TablasBBDD.TablaLineaPedido.COLUMN_CANTIDAD,postre.getCantidad() );
+                values.put(TablasBBDD.TablaLineaPedido.COLUMN_ID_PRODUCTO,pizza.getId() );
+                values.put(TablasBBDD.TablaLineaPedido.COLUMN_CANTIDAD,pizza.getCantidad() );
+                values.put(TablasBBDD.TablaLineaPedido.COLUMN_PRECIO_LINEA,pizza.getPrecio() );
+                values.put(TablasBBDD.TablaLineaPedido.COLUMN_ID_TAMANNO,pizza.getTamanoId() );
+                values.put(TablasBBDD.TablaLineaPedido.COLUMN_ID_MASA,pizza.getMasaId() );
+
 
                 long lineaPostre = db.insert(TablasBBDD.TablaLineaPedido.TABLE_NAME, null, values);
             } catch (Exception e) {
                 Toast.makeText(this, "err insertar" + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
         Intent intent = new Intent(this, Finalizar.class);
         intent.putExtra("texto",texto);

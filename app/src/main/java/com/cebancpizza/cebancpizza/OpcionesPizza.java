@@ -17,7 +17,8 @@ public class OpcionesPizza extends AppCompatActivity {
     RadioGroup rgMasa, rgTamanno;
     String masa = "masa fina", tamanno = "individual";
     Float precioMasa = Float.parseFloat("0.0"), precioTamanno = Float.parseFloat("0.0"), precioUnitario;
-
+    long masaID;
+    long tamanoID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,14 +34,17 @@ public class OpcionesPizza extends AppCompatActivity {
         nombre.setText(intent.getStringExtra("Nombre"));
         precio.setText(intent.getStringExtra("Precio"));
 
+
         rgMasa.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (checkedId == R.id.radioButton) {
                     masa = "masa fina";
+                    masaID =1;
                     precioMasa = Float.parseFloat("0.00");
                 } else if (checkedId == R.id.radioButton2) {
                     masa = "masa normal";
+                    masaID = 2;
                     precioMasa = Float.parseFloat("1.00");
                 }
                 calcularPrecio();
@@ -52,12 +56,15 @@ public class OpcionesPizza extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (checkedId == R.id.radioButton3) {
                     tamanno = "individual";
+                    tamanoID=1;
                     precioTamanno = Float.parseFloat("0.00");
                 } else if (checkedId == R.id.radioButton5) {
                     tamanno = "mediana";
+                    tamanoID=2;
                     precioTamanno = Float.parseFloat("2.00");
                 } else if (checkedId == R.id.radioButton6) {
                     tamanno = "familiar";
+                    tamanoID=3;
                     precioTamanno = Float.parseFloat("4.00");
                 }
                 calcularPrecio();
@@ -93,6 +100,8 @@ public class OpcionesPizza extends AppCompatActivity {
 
     public void anadirPizzaPedido(View v){
         Pizza pizza = new Pizza(nombre.getText().toString(),masa,tamanno,precioUnitario,Integer.parseInt(cantidad.getText().toString()));
+        pizza.setMasaId(masaID);
+        pizza.setTamanoId(tamanoID);
         ((Pedido) this.getApplication()).anadirPizza(pizza);
         finish();
     }

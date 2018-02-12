@@ -137,4 +137,5 @@
     <string name="adem_s_recibir_s_un_vale_para_comer_en_el_comedor_de_cebanc">Además Recibirás un vale para comer en el comedor de Cebanc</string>
     <string name="pedido_realizado_correctamente">Pedido realizado correctamente</string>
     <string name="recibir_s_un_peluche_de_mu_eco_android_por_compra_superior_a_30">Recibirás un peluche de muñeco android por compra superior a 30€</string>
+    <string name="mostrar_pedidos">Mostrar Pedidos</string>
 </resources>
