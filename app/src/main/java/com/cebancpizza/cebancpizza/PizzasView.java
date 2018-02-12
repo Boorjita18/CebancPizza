@@ -72,7 +72,7 @@ public class PizzasView extends AppCompatActivity {
                 dataSet.add(p);
 
             }
-
+            cursor.close();
 
             ProductosAdapter adapter = new ProductosAdapter(dataSet, getApplicationContext());
             listaPizzas.setAdapter(adapter);
@@ -131,7 +131,7 @@ public class PizzasView extends AppCompatActivity {
     }
 
     public void siguiente(View v) {
-        Intent intent = new Intent(this, PostresView.class);
+        Intent intent = new Intent(this, BebidasView.class);
         startActivity(intent);
     }
     public void revisarPedido(View v) {
