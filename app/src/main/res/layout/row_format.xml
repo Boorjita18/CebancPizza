@@ -30,7 +30,8 @@ android:padding="10dp"
             android:padding="10dp"
             android:text="@string/nombre_pizza_1"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/background_light" />
     </TableRow>
 
     <TableRow
@@ -48,7 +49,6 @@ android:padding="10dp"
             android:layout_weight="0.25"
             android:contentDescription=""
             android:cropToPadding="false"
-            android:elevation="0dp"
             app:srcCompat="@mipmap/campina"
             />
 
@@ -57,24 +57,26 @@ android:padding="10dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:padding="10dp"
-            android:paddingBottom="10dp"
-            android:focusableInTouchMode="false"
             android:clickable="false"
             android:focusable="false"
-            android:text="@string/descripcion_de_la_pizza_1" />
+            android:focusableInTouchMode="false"
+            android:padding="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/descripcion_de_la_pizza_1"
+            android:textColor="@android:color/darker_gray" />
 
         <TextView
             android:id="@+id/precioLista"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:padding="10dp"
-            android:text="@string/precio_pizza_1"
-            android:focusableInTouchMode="false"
             android:clickable="false"
             android:focusable="false"
-            android:textAlignment="textEnd" />
+            android:focusableInTouchMode="false"
+            android:padding="10dp"
+            android:text="@string/precio_pizza_1"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/darker_gray" />
 
     </TableRow>
     </TableLayout>
