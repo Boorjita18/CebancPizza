@@ -99,6 +99,7 @@ public class PizzasView extends AppCompatActivity {
         Intent intent = new Intent(this, OpcionesPizza.class);
         intent.putExtra("Nombre", productoActual.getNombre());
         intent.putExtra("Precio", String.valueOf(productoActual.getPrecio()));
+        intent.putExtra("id", String.valueOf(productoActual.getId()));
         startActivity(intent);
 
     }

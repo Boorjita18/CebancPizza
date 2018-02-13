@@ -83,6 +83,7 @@ public class MostrarPedidos extends AppCompatActivity {
         }
 
         for(int i =0;i<idCabecera.size();i++){
+            totalPedido=0;
             SQLiteDatabase dbU = conexion.getReadableDatabase();
 
             String[] projectionU = {
@@ -124,7 +125,7 @@ public class MostrarPedidos extends AppCompatActivity {
             }
             cursorU.close();
             texto+="____________________\n";
-            texto += "Total del Pedido: "+ totalPedido +" €";
+            texto += "Total del Pedido: "+ totalPedido +" €\n\n";
             texto= texto.replaceAll("null", " " );
         }
         textoPedidos.setText(texto);

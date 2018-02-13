@@ -19,6 +19,7 @@ public class OpcionesPizza extends AppCompatActivity {
     Float precioMasa = Float.parseFloat("0.0"), precioTamanno = Float.parseFloat("0.0"), precioUnitario;
     long masaID;
     long tamanoID;
+    long pizzaID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,9 @@ public class OpcionesPizza extends AppCompatActivity {
         precioUnitario = Float.parseFloat(intent.getStringExtra("Precio"));
         nombre.setText(intent.getStringExtra("Nombre"));
         precio.setText(intent.getStringExtra("Precio"));
+        pizzaID=Long.parseLong(intent.getStringExtra("id"));
+        masaID =1;
+        tamanoID=1;
 
 
         rgMasa.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -102,6 +106,7 @@ public class OpcionesPizza extends AppCompatActivity {
         Pizza pizza = new Pizza(nombre.getText().toString(),masa,tamanno,precioUnitario,Integer.parseInt(cantidad.getText().toString()));
         pizza.setMasaId(masaID);
         pizza.setTamanoId(tamanoID);
+        pizza.setId(pizzaID);
         ((Pedido) this.getApplication()).anadirPizza(pizza);
         finish();
     }
