@@ -7,6 +7,7 @@ package com.cebancpizza.cebancpizza;
 public class Usuario {
     String usuario, nombre, apellidos, direccion, email;
     int telefono;
+    long id;
 
     public long getId() {
         return id;
@@ -15,7 +16,7 @@ public class Usuario {
     public void setId(long id) {
         this.id = id;
     }
-    long id;
+
 
     public String getUsuario() {
         return usuario;
@@ -52,5 +53,8 @@ public class Usuario {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String toString() {
+        return this.nombre; // Value to be displayed in the Spinner
     }
 }

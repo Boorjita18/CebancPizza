@@ -106,17 +106,18 @@ public class DatosUsuario extends AppCompatActivity {
                 } catch (Exception e) {
                     Toast.makeText(this, "err insertar" + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
+                Usuario u = new Usuario();
+                u.setId(nuevaLinea);
+                u.setUsuario(usuario);
+                u.setNombre(nombre);
+                u.setApellidos(apellidos);
+                u.setDireccion(direccion);
+                u.setTelefono(telefono);
+                u.setEmail(email);
+                ((Pedido) this.getApplication()).setUsuairo(u);
             }
 
-            Usuario u = new Usuario();
-            u.setId(nuevaLinea);
-            u.setUsuario(usuario);
-            u.setNombre(nombre);
-            u.setApellidos(apellidos);
-            u.setDireccion(direccion);
-            u.setTelefono(telefono);
-            u.setEmail(email);
-            ((Pedido) this.getApplication()).setUsuairo(u);
+
         } else {
             Toast.makeText(this, erroresTexto, Toast.LENGTH_SHORT).show();
         }
@@ -171,7 +172,7 @@ public class DatosUsuario extends AppCompatActivity {
 
             busqueda = false;
         } else {
-            do {
+//            do {
                 Usuario u = new Usuario();
                 u.setUsuario(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_USUARIO)));
                 u.setNombre(cursor.getString(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_NOMBRE)));
@@ -182,13 +183,17 @@ public class DatosUsuario extends AppCompatActivity {
                 u.setId(cursor.getLong(cursor.getColumnIndex(TablasBBDD.TablaUsuario.COLUMN_ID)));
                 ((Pedido) this.getApplication()).setUsuairo(u);
 
+//            long id = ((Pedido) this.getApplication()).getUsuario().getId();
+//            Toast.makeText(this, String.valueOf(id), Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, ((Pedido) this.getApplication()).getUsuario().getNombre(), Toast.LENGTH_LONG).show();
+
                 nombreText.setText(u.getNombre());
                 apellidosText.setText(u.getApellidos());
                 direccionText.setText(u.getDireccion());
                 telefonoText.setText(String.valueOf(u.getTelefono()));
                 emailText.setText(u.getEmail());
 //                Toast.makeText(getApplicationContext(),"Bienvendo "+u.getNombre(),Toast.LENGTH_SHORT).show();
-            } while (cursor.moveToNext());
+//            } while (cursor.moveToNext());
 
             busqueda = true;
         }

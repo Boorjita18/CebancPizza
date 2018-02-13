@@ -24,8 +24,7 @@ public class PizzasView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pizzas_view);
-//        cantidad = (EditText) findViewById(R.id.textCantidadBebidas);
-//        cantidad.setText("0");
+
         listaPizzas = (ListView) findViewById(R.id.listViewPizzas);
         cargarView();
 
